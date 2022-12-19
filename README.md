@@ -5,7 +5,7 @@ This repo contains code base, materials and references with regards to training.
 
 # Environment Setup and tools
 ### Communication channel
-* [Discord]([https://discord.gg/4BfSxUsb](https://discord.gg/NZTCRXYw))
+* [Discord](https://discord.gg/4BfSxUsb](https://discord.gg/NZTCRXYw)
   * We will use a channel for instant messaging for this training. Make sure you're online during the training and a green sign is visible to everyone.
 * [Email](mailto:pushpinder.kaur@revature.com)
   * Send me an email if its a formal with regards to approvals, leaves or confidential information.
