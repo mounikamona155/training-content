@@ -1,3 +1,4 @@
+
 #! /usr/bin/bash #shebanng - tells which bash should run this shell file
 # comment - this will not be executed
 # ctrl + K+C to comment the selected lines
@@ -17,6 +18,7 @@
 # echo "Hello, $name"
 
 #Password Input
+echo "Hello all"
 read -p "Enter username " username
 read -sp "Enter your password " password
 echo -e "\nUsername is $username and password is $password"

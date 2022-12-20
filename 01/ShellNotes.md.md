@@ -7,6 +7,23 @@
 - BASH - Bourne Again Shell
 - check your bash location : `which bash`,  outputs to `/usr/bin/bash`
 
+## File/Directory Operations
+- `ls` - list files in current directory
+	- `ls -l` - list all files with more information
+		- First Column − Represents the file type and the permission given on the file. Below is the description of all type of files.
+		- Second Column − Represents the number of memory blocks taken by the file or directory.
+		- Third Column − Represents the owner of the file. This is the Unix user who created this file.
+		- Fourth Column − Represents the group of the owner. Every Unix user will have an associated group.
+		- Fifth Column − Represents the file size in bytes.
+		- Sixth Column − Represents the date and the time when this file was created or modified for the last time.
+		- Seventh Column − Represents the file or the directory name.
+- `vi filename` - creates files
+	- press the key `i` to come into the edit mode. Once you are in the edit mode, you can start writing your content in the file as in the following program
+	- Press the key esc to come out of the edit mode and then press two keys Shift + ZZ together to come out of the file completely.
+	- You can edit an existing file using the vi editor `vi filename`
+- `cat filename` - Display content of a file
+	- `cat -b filename` - can display file content with file numbers
+- `wc filename` - Counting Words in a File
 ## Variables 
 - A memory block to hold a value.
 - There are 2 types of variables that are created in Shell:
