@@ -30,6 +30,7 @@
 	- `rmdir dir1 dir2 dir3` - to remove multiple directories
 	- `rm -r dir1` - To remove a directory and all its contents, including any subdirectories and files, use the rm command with the recursive option, `-r`.
 - `cd directoryname/path` - change to a directory
+ - `cd ~` - takes you to home directory
  - `cd .` - represents current directory
  - `cd ..` - represents the directory one level above the current directory
  - `cd -` - last visited directory
