@@ -24,6 +24,16 @@
 - `cat filename` - Display content of a file
 	- `cat -b filename` - can display file content with file numbers
 - `wc filename` - Counting Words in a File
+- `mkdir directoryName` - create a new directory in the current directory
+	- `mkdir dir1 dir2 dir 3` - create 3 directories at time
+- `rmdir dir1` - to remove a directory
+	- `rmdir dir1 dir2 dir3` - to remove multiple directories
+	- `rm -r dir1` - To remove a directory and all its contents, including any subdirectories and files, use the rm command with the recursive option, `-r`.
+- `cd directoryname/path` - change to a directory
+ - `cd .` - represents current directory
+ - `cd ..` - represents the directory one level above the current directory
+ - `cd -` - last visited directory
+- 
 ## Variables 
 - A memory block to hold a value.
 - There are 2 types of variables that are created in Shell:
