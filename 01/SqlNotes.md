@@ -27,17 +27,12 @@
 - Columns hold the collection of similar type of fields. Like restaurant name is a column.
 - Field the fundamental or smallest unit in the table is a field which can have a value or null.
 - null value means no value or left blank. Empty space is not a null value
-| Restaurant Name | Location | Reviews |   |   |   |   |   |   |   |
-|-----------------|----------|---------|---|---|---|---|---|---|---|
-|     McDonalds            |    Delhi      | 4        |   |   |   |   |   |   |   |
-|         Apple Bees        | Texas         |   4.2      |   |   |   |   |   |   |   |
-|                 |          |         |   |   |   |   |   |   |   |
-|                 |          |         |   |   |   |   |   |   |   |
-|                 |          |         |   |   |   |   |   |   |   |
-|                 |          |         |   |   |   |   |   |   |   |
-|                 |          |         |   |   |   |   |   |   |   |
-|                 |          |         |   |   |   |   |   |   |   |
-|                 |          |         |   |   |   |   |   |   |   |
+
+| Restaurant Name | Location | Reviews |
+|-----------------|----------|---------|
+| McDonalds       | Delhi    | 4       |
+| Mod's           |Virginia  | 4.2     |
+
 
 ## [Datatypes in Sql](https://www.tutorialspoint.com/sql/sql-data-types.htm)
 - Numeric - int, bigint, smallint, bit, decimal, numeric, money, smallmoney, approximate numerics (float, real)
