@@ -44,8 +44,17 @@
 - Binary
 - mMiscellaneous - uniqueidentifier (guid), xml, timestamp
 
+## Sql Constraints
+- Rules which are enforced on columns of a table
+1. Not Null - ensures that column must have a value and it cannot have null
+2. Default - Provides a default value for a column when none is entered
+3. Unique - ensures all the values in the columns are uniqiue
+4. Primary - ensures all records in a table are unique
+5. Foreign - for referencing to a child table
+6. [Check](http://www.sql-server-helper.com/tips/tip-of-the-day.aspx?tkey=c6021c06-8631-4996-9e8d-2bc632dfebf0&tkw=using-check-constraints-to-validate-data) - ensures all the values in a column satisfies the condition 
+    - `Age int check (age>17),`
 
-## Refernces 
+## References 
 - Please choose your path and go through successive trailing links
 - [Reading](https://www.tutorialspoint.com/sql/index.htm)
 - [Videos](https://www.youtube.com/playlist?list=PL08903FB7ACA1C2FB) - ignore installtion and start with video 3
