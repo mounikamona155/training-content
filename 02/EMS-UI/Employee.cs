@@ -5,7 +5,7 @@ namespace EMS_UI
     class Employee
     {
         //type members - variable (define state/attribute of the object)
-        string firstName="Lilly", lastName = "Windsor", id="101";
+        string firstName="Lilly", lastName = "Windsor";
         // properties is another way to represent encapsulation
         public string FirstName{
             //readable accessor
@@ -39,20 +39,7 @@ namespace EMS_UI
                 lastName = value;
             }
         }
-        public string Id{
-            get{
-                 if(String.IsNullOrEmpty(id))
-                    throw new InvalidDataException("The id is empty or null") ; 
-                return id;
-            }
-            set{
-                 if(value.Length<=0)
-                    throw new InvalidDataException("The id should not be empty") ;   
-                id = value;
-            }
-        }
-        //int age=25;
-        //char code = '1';
-        //bool isAlive = true;
+        // this is called auto-property - where it does not find any declared private variable. so implicitly it creates a private variable behind the scenes
+       public string Id { get; set; }
     }
 }
