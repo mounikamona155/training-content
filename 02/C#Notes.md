@@ -28,7 +28,7 @@
 * Common Language Specification
 * It has defined rules and restrictions that every langauge must follow for it to be able to run the .NET framework
 * Essentially a standardization to make sure a language won't do anything that will make it incompatible with .NET framework
-## CTS
+## [CTS](https://www.c-sharpcorner.com/blogs/what-are-cts-and-cls-in-net)
 * Common Type System
 * Provides a library of the basic value data types
 * It is a standardization of data types to ensure every language will follow the same datatype
@@ -44,7 +44,7 @@
 * Essentially, it is .NET's version of VES
 * Run-time environment that provides services that make the development process easier
 * Some servies it includes:
-    * Automatic memory management (older languages you ahve to manually release unused resources)
+    * Automatic memory management (older languages you have to manually release unused resources)
     * JIT compilation (Just-inTime compilation that involves compliation during execution for optimization)
         * It just means any new compile code gets executed immediately, it doesn't have to wait until your entire code has been compiled to run your app
     * Exception handling support
