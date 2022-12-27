@@ -162,7 +162,16 @@
   - read-only - with only get accessor.
   - write-only - with only set accessor.
   - read-write property - with both get and set accessor. 
-
+# [Constructors](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/constructors)
+- A constructor is a special method whose name is same as the name of its type, it does not have any return type
+- Whenever a class or struct is created, its constructor is called. 
+    - We use constructor to set some defualt values, limitation instantiation
+- Types of Constructors:
+    - Parameterless constructor - a constructor without any parameter.
+    - Parameterized constructor - constructor with parameters.
+        - this keyword should be used to resolve ambiguity in names
+    - Private constructor
+    - Static constructor
 ## Method Overloading 
   - Also known as static or compile time polymorphism
   - Methods with same name in the containing class but with different **Signature**.

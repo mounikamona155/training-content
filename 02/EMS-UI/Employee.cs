@@ -4,8 +4,9 @@ namespace EMS_UI
     // Types
     class Employee
     {
+        int? age;//nullable integer
         //type members - variable (define state/attribute of the object)
-        string firstName="Lilly", lastName = "Windsor";
+        string firstName, lastName;
         // properties is another way to represent encapsulation
         public string FirstName{
             //readable accessor
@@ -41,5 +42,20 @@ namespace EMS_UI
         }
         // this is called auto-property - where it does not find any declared private variable. so implicitly it creates a private variable behind the scenes
        public string Id { get; set; }
+       
+       //parameterlesss constructor
+       public Employee():this("Chanel","Lora")
+       {
+        //default values
+            // Id="101";
+            // firstName="Lilly";
+            // lastName = "Windsor";
+       }
+
+       //parameterized constructor
+       public Employee(string firstName, string lastName){
+            this.firstName=firstName;
+            this.lastName=lastName;
+       }
     }
 }
