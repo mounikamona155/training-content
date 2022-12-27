@@ -139,13 +139,29 @@
     5. protected internal
     6. private protected
     7. file - newly launched in C# 11
+
+# Datatypes in C#
+- Predefined - built in datatypes in C#
+    - Eg: int, short, byte, long, float, double, decimal, char, boolean, string
+- User defined
+    - class, struct, arrays, enums etc....
+- **Value Types**
+    - A value type contains an instance/value od the type (struct)
+    - Stored on stack memory location
+    - with value types each variable has its own copy of the data and its not possible for the operations on one variable affect to the other 
+    - Predefined (int, byte, short, long, double, decimal, float, char,bool) enums, structs
+- **Reference Types**
+    - A reference typw contains a reference to an instance/value of the type (class)
+    - The reference is stored in the stack and the instance/value its pointing to is stored on the heap
+    - With reference types, 2 variables can reference the same object; there, operations one one variable can affecr the object referenced by the other variable.
+    - predefined (string, collections), class, object, arrays, interface, delegates
 # [Properties](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/properties)
-- Smart fields in C# which are used to expose a private variable outsid the class
-- You can use conditionals with your properties.
+- Smart fields in C# which are used to expose a private variable outside the class
+- You can use conditionals with your properties, to perform some computation on the data before it's stored or returned.
 - properties can be created in 3 ways:
-  - read-only - with only get block.
-  - write-only - with only set block.
-  - read-write property - with both get and set block. 
+  - read-only - with only get accessor.
+  - write-only - with only set accessor.
+  - read-write property - with both get and set accessor. 
 
 ## Method Overloading 
   - Also known as static or compile time polymorphism
