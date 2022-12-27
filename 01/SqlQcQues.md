@@ -7,7 +7,7 @@
 7. What is a Foreign Key?
 8. What are the different types of joins?
 9. Explain One-To-One, One-To-Many, Many-To-Many
-10. What are the different constraints in Oracle SQL?
+10. What are the different constraints in MS SQL?
 11. Order By vs Group By?
 12. Why would we ever use a self join? 
 13. What is referential Integrity?
@@ -30,4 +30,4 @@
 30. What is the syntax for implementing a FOREIGN KEY constraint with ALTER?
 31. What is a DEFAULT constraint?
 32. What are the properties of a good transaction?
-33. What is a trigger? And types of trigers
+33. What is a trigger? And types of triggers
