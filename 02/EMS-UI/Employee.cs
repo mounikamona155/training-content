@@ -44,12 +44,12 @@ namespace EMS_UI
        public string Id { get; set; }
        
        //parameterlesss constructor
-       public Employee():this("Chanel","Lora")
+       public Employee()//:this("Chanel","Lora")
        {
         //default values
-            // Id="101";
-            // firstName="Lilly";
-            // lastName = "Windsor";
+            Id="101";
+            firstName="Lilly";
+            lastName = "Windsor";
        }
 
        //parameterized constructor
