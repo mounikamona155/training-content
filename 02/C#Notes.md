@@ -173,7 +173,7 @@
     - Private constructor
     - Static constructor
 
-# Method
+# [Method](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/methods)
 - A block of code which has a logic in the form of a series of statements.
 - A method consists of :
     - Signature - consists of access/optional modifiers, name of the method, return type and parameters.
