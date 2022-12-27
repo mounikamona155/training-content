@@ -172,6 +172,13 @@
         - this keyword should be used to resolve ambiguity in names
     - Private constructor
     - Static constructor
+
+# Method
+- A block of code which has a logic in the form of a series of statements.
+- A method consists of :
+    - Signature - consists of access/optional modifiers, name of the method, return type and parameters.
+        - parameters which are enclosed within () and separated by commas
+    - Body - anything within { } is known as method body.
 ## Method Overloading 
   - Also known as static or compile time polymorphism
   - Methods with same name in the containing class but with different **Signature**.

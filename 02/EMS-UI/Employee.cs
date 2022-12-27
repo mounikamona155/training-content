@@ -4,7 +4,7 @@ namespace EMS_UI
     // Types
     class Employee
     {
-        int? age;//nullable integer
+        //int? age;//nullable integer
         //type members - variable (define state/attribute of the object)
         string firstName, lastName;
         // properties is another way to represent encapsulation
@@ -56,6 +56,16 @@ namespace EMS_UI
        public Employee(string firstName, string lastName){
             this.firstName=firstName;
             this.lastName=lastName;
+       }
+
+       internal string GetDetails(){
+            return $"Employee Id - {Id} \nEmployee name - {FirstName} {LastName}";
+       }
+       internal string GetDetails(string Id, string firstName, string lastName){
+            this.firstName=firstName;
+            this.lastName=lastName;
+            this.Id=Id;
+            return $"Employee Id - {Id} \nEmployee name - {FirstName} {LastName}";
        }
     }
 }
