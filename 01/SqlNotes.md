@@ -186,7 +186,7 @@
 * A set of properties of database transaction that is intended to guarantee validity even in the event of catostrophic error or system failures
 * Basically, you ensure that your database won't be corrupted if something bad happens
 
-## Transaction
+## [Transaction](https://www.sqlshack.com/transactions-in-sql-server-for-beginners/)
 * Think of a method in C# meaning it can run multiple query statements in a single transaction
 * They will help prevent data inconsistency because they will either execute all sql statement inside the transaction or not
 * Essentially, they will rollback (put everything back the way it was) all the change they did if something bad happens
