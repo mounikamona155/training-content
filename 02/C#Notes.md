@@ -366,3 +366,4 @@ Console.WriteLine("==== Boxing and Unboxing ====");
     - Arrays elements will always have any value even if its default which means arrays cannot grow or shrink
 ## References
 - [Basics of C# Programming](https://learn.microsoft.com/en-gb/users/dotnet/collections/yz26f8y64n7k07?WT.mc_id=dotnet-35129-website&source=docs)
+- [Practise C#](https://dotnetcademy.net/Learn/2047/Pages/1)
