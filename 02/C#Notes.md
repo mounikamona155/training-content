@@ -243,7 +243,9 @@ interface IY{}
 * Static class members belongs to the class itself rather than to a specific object
     * Allows you to use those class members without instantiating an object from that class
     * If a static field changes, every object will reflect that change (think of it as a federal law that every state must follow)
-
+## const
+- A const keyword is used woth fields which donot changes throughout the program
+- Eg `float const Pi = 22/7;`
 ## Readonly
 * Readonly fields cannot change its value once it is set
 * **They can be initialized at a later time** like in a constructor
@@ -274,13 +276,32 @@ string? i
 ## Struct
 * Unlike classes, struct gets stored in the stack memory so they are more optimized and efficient
 * But since they are stored in the stack memory, they are only used for encapsulating simple data and have little to no behavior (so generally have simple datatype for properties and very simple functions of methods)
+* Limitations:
+    * A structure cannot be inherited from other structs or classes. However structs can implement interfaces.
+    * Prior to C# 11, a constructor of a structure type must initialize all the instance fields of the type.
+    * Prior to C# 10, you cannot declare a parameterless constructor
+    * Prior to C# 10, you can't initialize an instance field or property at its declaration.
 
 ## Conversion
-### User-defined conversion
+### Implict Conversions
+* No syntax is required to change type because  conversion succeed with not data loss. Ex long can contain int values because long is 8 byte integer and int is of 4 byte interger type.
+* * ```
+long height;
+int h = 178;
+height = h;// implicit conversion
+```
+### Explicit Conversion
+* Explicit conversion require a cast expression. Casting is required when informations might be lost in the conversiom or when the conversion might not succeed. Ex - numeric conversion to a type that has less precision or smaller range or conversion of base type to child type.
+* ```
+short height;
+int h = 178;
+height = (short)h;// explicit cast
+```
+### [User-defined conversion](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/user-defined-conversion-operators)
 * Gives you the capabilities to convert other datatypes into a class either implicitly or explicitly
 * You must use the **operator** keyword followed by either **implicit** or **explicit** keyword
 
-### Boxing and Unboxing
+### [Boxing and Unboxing](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/types/boxing-and-unboxing)
 * Boxing
     * It is when a value type gets casted into an object
     * Useful if you want a value type to have reference type like functionalities
@@ -310,7 +331,21 @@ Console.WriteLine("==== Boxing and Unboxing ====");
             int num2 = (int)obj;
             Console.WriteLine(num2);
 ```
+- Boxing and unboxing are computationally expensive and in return they are poor in [performance](https://learn.microsoft.com/en-us/dotnet/framework/performance/performance-tips)
+    - When a value type is boxed it has allocate a new object and constructed. Memory loaction also changes from stack to heap.
+    - For unboxing to a lesser degree, you have to move an object to stack memory
+    - It is best to avoid boxing using value types in situation where they are boxed a high number of times. This can take upto 20 times longer than a simple reference assignment.
+    - ![https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/types/media/boxing-and-unboxing/boxing-operation-i-o-variables.gif](boxing)
+    - Similar way when unboxing happens it can take upto 4 times as long as an assignment.
+    - ![https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/types/media/boxing-and-unboxing/unboxing-conversion-operation.gif](unboxing)
+### Var keyword
+- Implicit typed variables declared using var
 
+### Upcasting 
+* Upcasting - Process of assignment of derived class object to a base class reference in C# inheritance 
+    * It is implicit 
+* Downcasting - Process of assigment of base class object to child class reference in C# inheritance
+    * it is explicit so might need a cast
 
 ## References
 - [Basics of C# Programming](https://learn.microsoft.com/en-gb/users/dotnet/collections/yz26f8y64n7k07?WT.mc_id=dotnet-35129-website&source=docs)

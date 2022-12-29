@@ -35,4 +35,12 @@ Console.WriteLine(mgr.GetDetails());
 Console.WriteLine($"Salary - ${mgr.CalculateSalary()}/month");*/
 
 
-IEmployeeOperations2 empOp2= new EmployeeOperationsImplementation();// upcasting 
+// IEmployeeOperations2 empOp2= new EmployeeOperationsImplementation();// upcasting 
+
+EMS.Employee empStr=new EMS.Employee();
+Console.WriteLine($"{empStr.id} - {empStr.firstName} {empStr.lastName} - ${empStr.salary}");
+
+//Upcasting 
+EMS.A a = new EMS.B();//upcasting
+
+EMS.B b = (EMS.B)a;// downcasting

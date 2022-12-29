@@ -1,3 +1,37 @@
+namespace EMS
+{
+    class A{}
+    class B:A{}
+    public struct Employee
+    {
+        public int id;// strongly/explicitly typed variable because its type has been declared
+        short height;
+        public string firstName, lastName;
+        public decimal salary;
+        public Employee()
+        {
+            id=1;
+            firstName ="Lilly";
+            lastName ="Buffay";
+            salary=16000.60M;
+            height = 170;
+        }
+        public string GetFullName(){
+            return $"{firstName} {lastName}";
+        }
+        public void GetDetails(){
+            var a = 10.98M;//GetFullName(); // implicitly typed variable who type is determined on compilation based on the value assigned
+            int h = 178;
+            height = (short)h;// explicit cast
+            Console.Write("Please enter your Id ");
+            id = Int32.Parse(Console.ReadLine());
+        }
+    }
+    struct Manager//:Employee//inheritance between structs not allowed
+    {
+        
+    }
+}
 // user-defined namespace
 namespace EMS_UI
 {

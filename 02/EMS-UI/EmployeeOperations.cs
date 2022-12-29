@@ -1,5 +1,22 @@
 namespace EMS_UI
 {
+     class A
+    {
+        const float pi = 22/7;
+        static readonly float y = 10;// statuc readonly can only be initialized in the static constructor as oppose to instance constructor
+        static int x; 
+        static A()
+        {
+            y=12;
+        }
+        static void Method1(){
+            //pi=3.14f;
+           
+        }        
+    }
+    class B:A{
+
+    }
     interface IEmployeeOperations1
     {
         void Add(Employee employee);
@@ -16,7 +33,7 @@ namespace EMS_UI
     public abstract class EmployeeOperations
     {
         // an abstract method is missing the implementation and will be overriden in the child class
-        protected abstract void Add(Employee employee);
+        public abstract void Add(Employee employee);
         public abstract void Delete(int id);
         public virtual void Update(Employee employee)
         {

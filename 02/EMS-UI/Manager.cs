@@ -4,7 +4,7 @@ namespace EMS_UI
     {
         Hire, Fire, Delegate, Approve, Reject
     }
-    partial class Employee
+    public partial class Employee
     {
         internal decimal payRate, taxes, healthCare, bonus, reimbursements, hours, overTime;
         public virtual decimal CalculateSalary()
