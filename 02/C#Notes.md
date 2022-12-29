@@ -347,5 +347,19 @@ Console.WriteLine("==== Boxing and Unboxing ====");
 * Downcasting - Process of assigment of base class object to child class reference in C# inheritance
     * it is explicit so might need a cast
 
+
+# Collections in C#
+## [Arrays](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/arrays/)
+- collection of items of similar data type and these items are located in contigious memory locations
+- Types of arrays in C#: 
+1. Single dimension array
+2. Multidimension array
+    a. 2 D
+    b. 3-D
+3. Jagged Arrays
+- Length will tell you the number of items in the array
+- Rank - will tell the dimension of the array
+- All indexes of arrays are 0 indexed, an array with n elements will have 0 to n-1 indexes
+- Looping thropugh arrays become easy because of foreach loop as you know Arrays implement IEnumerable
 ## References
 - [Basics of C# Programming](https://learn.microsoft.com/en-gb/users/dotnet/collections/yz26f8y64n7k07?WT.mc_id=dotnet-35129-website&source=docs)

@@ -45,8 +45,22 @@ EMS.A a = new EMS.B();//upcasting
 
 EMS.B b = (EMS.B)a;// downcasting*/
 
-Person person = new Person();
+//Person is a class added in Class Lib and can be accessed after adding refernce
+/*Person person = new Person();
 person.Id=1;
 person.Name="Emily";
 person.Age=35;
-Console.Write(person.ToString());
+Console.Write(person.ToString());*/
+
+
+string[] names = {"Kaveri","Ophilia","Carol","Michel","Branda"};
+Person[] persons = {
+    new Person(){Id=1, Name="Fred", Age=40},
+    new Person(){Id=2, Name="Marielle", Age=25},
+    new Person(){Id=3, Name="Stephen", Age=23},
+    new Person(){Id=4, Name="Juniper", Age=27}
+};
+foreach (var p in persons)
+{
+    Console.WriteLine($"{p.Id} - {p.Name} is {p.Age} years");
+}
