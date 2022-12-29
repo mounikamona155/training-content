@@ -199,10 +199,14 @@
 - A non-abstrat class dervied from an abstract class must include the actual implementations of all inherited abstarct methods
 
 ## Abstract methods
-- An abstact method is implicitly virtual method.
+- An abstract method is implicitly virtual method.
 - Abstract method declarations are only permitted in abstract classes
 - An abstract method has no implenmentation (body); this is why the method ends with a semicoln instead on curly brackets.
-- An abstract method is implemented in the child class by using **overrid** keyword
+- An abstract method is implemented in the child class by using **override** keyword
+
+## [Interface](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/interface)
+- An interface is a contract which is implemented by a class/struct; and the implementing class/struct must define the implementation of the members of the interface.
+- In earlier version of C# we use have only four types of members of interfaces as methods, properties, indexers and events. But in mordern version of C# 9 or above you can have a static implementatio of common functionalities.
 ## [Abstract class](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members) vs [Interface](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/interface)
 - An interface defines a contract. Any class or struct that implements that contract must provide an implementation of the members defined in the interface. 
 - Abstract class allows you to implement a spectrum of abstraction like full abstraction, partial abstraction etc....
@@ -210,6 +214,8 @@
 - Abstract class and interface cannot be instantiated but meant to be implemented/inherited.
 - Abstract/Concrete class can implement one or more interfaces by which multiple inheritance is achieved. But class can only inherit from 1 class.
 - A class can inherit 1 class and one or more interfaces.    
+- Abstract class is used to implement core identity of a class where as interface is used to implement peripheral/surface level abililities of a class.
+- If there is a need of implementing xommon behavior the abstract class should be used over interfaces.
 ```
 class A{}
 

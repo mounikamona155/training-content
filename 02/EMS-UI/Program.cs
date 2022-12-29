@@ -1,7 +1,7 @@
 ﻿using System;
 using EMS_UI;
 
-Employee emp=new Employee();//instatiang an object of the class
+/*Employee emp=new Employee();//instatiang an object of the class
 
 emp.Id ="101";
 emp.FirstName="Joe";
@@ -11,13 +11,13 @@ emp.hours = 40;
 emp.bonus = 200.0M;
 decimal addents = emp.payRate* emp.hours+emp.bonus;
 emp.taxes=0.3M * addents;
-emp.reimbursements = 25;
+emp.reimbursements = 25;*/
 //System.Console.WriteLine("Default "+ default(bool));
 //Console.WriteLine(emp.GetDetails());
 //Console.WriteLine($"Salary - {emp.CalculateSalary()}");
 
 
-Manager mgr=new Manager();
+/*Manager mgr=new Manager();
 mgr.Id ="301";
 mgr.FirstName="Kaveri";
 mgr.LastName="Priya";
@@ -32,4 +32,7 @@ mgr.healthCare = 500;
 mgr.housingAllowance = 625;
 
 Console.WriteLine(mgr.GetDetails());
-Console.WriteLine($"Salary - ${mgr.CalculateSalary()}/month");
+Console.WriteLine($"Salary - ${mgr.CalculateSalary()}/month");*/
+
+
+IEmployeeOperations2 empOp2= new EmployeeOperationsImplementation();// upcasting 
