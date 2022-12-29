@@ -52,15 +52,26 @@ person.Name="Emily";
 person.Age=35;
 Console.Write(person.ToString());*/
 
-
-string[] names = {"Kaveri","Ophilia","Carol","Michel","Branda"};
+// Arrays
+/*string[] names = {"Kaveri","Ophilia","Carol","Michel","Branda"};
 Person[] persons = {
     new Person(){Id=1, Name="Fred", Age=40},
     new Person(){Id=2, Name="Marielle", Age=25},
     new Person(){Id=3, Name="Stephen", Age=23},
     new Person(){Id=4, Name="Juniper", Age=27}
 };
+//names[5] ="Marielle";// this will give IndexOutOfRenageException as arrays size is fixed and adding extra element will raise an exception
+Console.WriteLine(names[5]);
 foreach (var p in persons)
 {
     Console.WriteLine($"{p.Id} - {p.Name} is {p.Age} years");
+}*/
+
+// Collections
+Person per = new Person();
+var persons=per.GetPersons();
+foreach (var p in persons.Keys)
+{
+    Console.WriteLine($"{p} - {persons[p].Id} - {persons[p].Name} is {persons[p].Age} years");
+    //Console.WriteLine($"{p.Id} - {p.Name} is {p.Age} years");
 }

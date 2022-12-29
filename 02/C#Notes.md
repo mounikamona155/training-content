@@ -361,5 +361,8 @@ Console.WriteLine("==== Boxing and Unboxing ====");
 - Rank - will tell the dimension of the array
 - All indexes of arrays are 0 indexed, an array with n elements will have 0 to n-1 indexes
 - Looping thropugh arrays become easy because of foreach loop as you know Arrays implement IEnumerable
+- Arrays have drawbacks:
+    - They are fixed in size and adding extra element will raise an IndexOutOfRangeException
+    - Arrays elements will always have any value even if its default which means arrays cannot grow or shrink
 ## References
 - [Basics of C# Programming](https://learn.microsoft.com/en-gb/users/dotnet/collections/yz26f8y64n7k07?WT.mc_id=dotnet-35129-website&source=docs)
