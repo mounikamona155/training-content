@@ -284,7 +284,7 @@ string? i
 
 ## Conversion
 ### Implict Conversions
-* No syntax is required to change type because  conversion succeed with not data loss. Ex long can contain int values because long is 8 byte integer and int is of 4 byte interger type.
+* No syntax is required to change type because  conversion succeed with not data loss. Ex long can contain int values because long is 8 byte integer and int is of 4 byte integer type.
 * * ```
 long height;
 int h = 178;
