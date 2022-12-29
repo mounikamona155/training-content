@@ -2,7 +2,7 @@
 namespace EMS_UI
 {
     // Types
-    partial class Employee
+    public partial class Employee
     {
         //int? age;//nullable integer
         //type members - variable (define state/attribute of the object)

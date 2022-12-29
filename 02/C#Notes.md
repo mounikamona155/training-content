@@ -141,6 +141,7 @@
     7. file - newly launched in C# 11
 
 # Datatypes in C#
+- All the datatypes in C# are directly or indirectly inherited from **System.Object** class. Which is why we get object methods like Equals(), ToString(), GetHashCode().
 - Predefined - built in datatypes in C#
     - Eg: int, short, byte, long, float, double, decimal, char, boolean, string
 - User defined
@@ -192,7 +193,16 @@
 - Redefining the method of base class in child class.
 - It is necessary to make a method overridable by using *abstract* or *virtual* keyword in base class
 - In child class use the keyword *override* to override these methods.
+## [Abstract class]
+- An abstract class cannot be instantiated
+- An abstract class may contaim abstract methods and successor
+- A non-abstrat class dervied from an abstract class must include the actual implementations of all inherited abstarct methods
 
+## Abstract methods
+- An abstact method is implicitly virtual method.
+- Abstract method declarations are only permitted in abstract classes
+- An abstract method has no implenmentation (body); this is why the method ends with a semicoln instead on curly brackets.
+- An abstract method is implemented in the child class by using **overrid** keyword
 ## [Abstract class](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members) vs [Interface](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/interface)
 - An interface defines a contract. Any class or struct that implements that contract must provide an implementation of the members defined in the interface. 
 - Abstract class allows you to implement a spectrum of abstraction like full abstraction, partial abstraction etc....
