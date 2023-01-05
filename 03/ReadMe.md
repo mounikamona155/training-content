@@ -61,5 +61,10 @@
     - `^(([0-9])|([0-2][0-9])|([3][0-1]))\ (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\ \d{4}$`
 - Email - `\w+@\w+\.\w{2,4}\.?\w{0,2}`
 
+
+# File Handling 
+
 # References:
 - [Practise Regular Expressions Basics](https://www.codecademy.com/learn/introduction-to-regular-expressions)
+- [File Handling overview](https://learn.microsoft.com/en-us/dotnet/standard/io/)
+- [File Handling another](https://www.geeksforgeeks.org/basics-of-file-handling-in-c-sharp/)

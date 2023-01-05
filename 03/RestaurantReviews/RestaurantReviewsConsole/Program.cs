@@ -1,2 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using RestaurantReviewsData;
+
+string path = "../RestaurantReviewsData/FileStorage/Restaurant.txt";
+IOperations opr= new Operations();
+Console.WriteLine(opr.Get(path));
