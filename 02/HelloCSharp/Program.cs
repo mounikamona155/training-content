@@ -17,7 +17,10 @@ namespace HelloCSharp{
         public static void Main(string[] args)
         {
             //Console.WriteLine(args[0]);//Printing first command line arguement
-            User.GreetUser();
+            //User.GreetUser();
+            Console.Write("Please enter a string to check for palindrome ");
+            var input=Console.ReadLine();
+            Console.Write(CodingChallenges.IsPalindrome(input));
         }
     }
 }
