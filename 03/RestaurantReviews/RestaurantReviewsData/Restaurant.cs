@@ -1,4 +1,5 @@
 ﻿using System.Text.RegularExpressions;
+using RestaurantReviewsData.Common;
 namespace RestaurantReviewsData;
 public class Restaurant
 {
@@ -9,7 +10,7 @@ public class Restaurant
         OpenTime = "7:00";
         CloseTime = "21:00";
         Email = "contactus@tacobell.in";
-        phone = "9876543210";
+        phone = "abscd";
         Website = "https://tacobell.in";
         ZipCode = "600130";
     }
@@ -28,11 +29,11 @@ public class Restaurant
         set
         {
             string pattern = @"[6-9]\d{9}";
-            var IsPhoneCorrect = Regex.IsMatch(phone, pattern, RegexOptions.IgnorePatternWhitespace);
+            var IsPhoneCorrect = Regex.IsMatch(phone, pattern);
             if (IsPhoneCorrect)
                 phone = value;
             else
-                throw new InvalidDataException("Please add a valid mobile phone with 10 digits only");
+                throw new ValidationException("Please add a valid mobile phone with 10 digits only");
         }
     }
     public string Email { get; set; }

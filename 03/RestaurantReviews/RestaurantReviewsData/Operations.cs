@@ -15,7 +15,7 @@ namespace RestaurantReviewsData
                 Restaurant restaurant = new Restaurant();
                 sw.WriteLine($"{restaurant.Id} {restaurant.Name} {restaurant.OpenTime}-{restaurant.CloseTime} {restaurant.Phone}");
                 sw.Flush();
-                 sw.Close();
+                sw.Close();
                 Console.WriteLine("Restaurant Added");
             }            
             //most specific exception            
