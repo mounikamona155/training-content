@@ -18,9 +18,19 @@ namespace HelloCSharp{
         {
             //Console.WriteLine(args[0]);//Printing first command line arguement
             //User.GreetUser();
-            Console.Write("Please enter a string to check for palindrome ");
+            /*Console.Write("Please enter a string to check for palindrome ");
             var input=Console.ReadLine();
-            Console.Write(CodingChallenges.IsPalindrome(input));
+            Console.Write(CodingChallenges.IsPalindrome(input));*/
+
+            ICalculator ic=new Calculator();
+            try{
+                Console.WriteLine(ic.Divide(6,0));
+            }
+            catch(DivideByZeroException ex){
+                //throw;//re-throw
+                Console.WriteLine("Exception in Program class "+ex.Message);
+            }
+            
         }
     }
 }
