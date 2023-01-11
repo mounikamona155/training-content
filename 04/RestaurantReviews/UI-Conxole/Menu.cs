@@ -38,7 +38,7 @@ namespace UI_Console
                     Console.WriteLine("Please input a valid response");
                     Console.WriteLine("Please press Enter to continue");
                     Console.ReadLine();
-                    return "MainMenu";
+                    return "Menu";
             }
         }
     }

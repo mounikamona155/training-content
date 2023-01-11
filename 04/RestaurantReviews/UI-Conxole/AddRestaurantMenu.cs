@@ -31,13 +31,13 @@ namespace UI_Console
                     //Exception handling to have a better user experience
                     try
                     {
-                        Log.Information("Adding pokemon \n" + newRestaurant);
+                        Log.Information("Adding restaurant \n" + newRestaurant);
                         repo.Add(newRestaurant);
                         Log.Information("Successful at adding Restaurant!");
                     }
                     catch (System.Exception exc)
                     {
-                        Log.Error("Failed to add Restauran");
+                        Log.Error($"Failed to add Restaurant - {exc.Message}");
                         Console.WriteLine(exc.Message);
                         Console.WriteLine("Please press Enter to continue");
                         Console.ReadLine();

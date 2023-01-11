@@ -27,12 +27,16 @@ namespace UI_Console
                     return "Menu";
                 case "1":
                     //Logic to display the result
+                    Log.Information("Getting all restaurants");
                     var listOfRestaurant = repo.GetAllRestaurants();
-                    foreach (var item in listOfRestaurant)
+                    Log.Information($"Got list of {listOfRestaurant.Count} restaurants");
+                    Log.Information("Reading restaurants about to start");
+                    foreach (var r in listOfRestaurant)
                     {
                         Console.WriteLine("================");
-                        Console.WriteLine(item.ToString());
+                        Console.WriteLine(r.ToString());
                     }
+                    Log.Information("Reading restaurants ends");
                     Console.WriteLine("Please press Enter to continue");
                     Console.ReadLine();
 

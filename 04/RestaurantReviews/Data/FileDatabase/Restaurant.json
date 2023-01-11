@@ -68,5 +68,15 @@
     "Email": null,
     "Website": null,
     "ZipCode": "250110"
+  },
+  {
+    "Id": 11,
+    "Name": "KFC",
+    "OpenTime": "8:00 AM",
+    "CloseTime": "11:00 PM",
+    "Phone": "9988776655",
+    "Email": "contact@kfc.com",
+    "Website": null,
+    "ZipCode": "501101"
   }
 ]
