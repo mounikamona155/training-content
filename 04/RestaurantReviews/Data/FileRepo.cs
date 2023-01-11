@@ -22,8 +22,10 @@ namespace Data
             string path = _filePath + "Restaurant.json";
             List<Restaurant> listOfRestaurants = GetAllRestaurants();
             listOfRestaurants.Add(restaurant);
-
-            _jsonString = JsonSerializer.Serialize(listOfRestaurants);
+            var options = new JsonSerializerOptions() { 
+                WriteIndented = true
+            };
+            _jsonString = JsonSerializer.Serialize(listOfRestaurants, options);
 
             File.WriteAllText(path, _jsonString);
 

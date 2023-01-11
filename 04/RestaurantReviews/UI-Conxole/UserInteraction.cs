@@ -5,7 +5,7 @@ namespace UI_Console
     class UserInteraction
     {
         static FileRepo file = new FileRepo();
-        //Add restarurant by taking input from user
+        //Add restaurant by taking input from user
 
         //read all restaurants
         internal static void GetRestaurants()
