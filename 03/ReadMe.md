@@ -62,7 +62,8 @@
 - Email - `\w+@\w+\.\w{2,4}\.?\w{0,2}`
 
 
-# File Handling 
+# File Handling
+- [Basics of File I/O](https://learn.microsoft.com/en-us/troubleshoot/developer/visualstudio/csharp/language-compilers/file-io-operation)
 # Exceptions
 - An exception is an event that occurs during the execution of a program that distrupts the normal flow of instructions
     - Horrible to encounter when presenting your program (When it is expected to work perfectly fine)
@@ -92,6 +93,28 @@
 - Certain exceptions are more specific than other exceptions
 - General rule is the most specific exception should be the very first catch block and the least specific exception is at the very last catch block
     - Why? Well if you made the least specific the first catch block then it will always run if any exception is thrown making your other catch blocks useless
+## throw vs rethrow?
+- google it out
+
+## [Logging](https://en.wikipedia.org/wiki/Logging_(software))
+* The systematically way to record a series of events depending on what exactly you are trying to capture
+* Ex: Logging user events - you will record every single page they went through, every single customer they have added, every single orders they have made
+* The main purpose is for debugging potential bugs since the main problem with debugging is trying to re-create that bug again just to see what exactly did the user did to even get that bug
+* Asking for feedback from a user as to what they did is incredibly unreliable so we have a robot to essentially record everything they do
+* OF COURSE, that is only limited to what are they doing in the application and highly unethical (maybe illegal I'm not a lawyer) to record everything they do beyond that
+## Serilog
+* A library we will utilize to add logging functionality with our application
+* There are more libraries out there that can accomplish the same task such as NLog but we will stick with Serilog
+### [Steps to start Serilog](https://github.com/serilog/serilog/wiki/Getting-Started)
+1. Make sure you add the package from Nuget
+```
+dotnet add package Serilog
+dotnet add package Serilog.Sinks.File
+```
+2. create a Logger using LoggerConfiguration class provided by Serilog
+3. Start logging!
+
+## [Garbage Collection](https://learn.microsoft.com/en-us/dotnet/standard/garbage-collection/fundamentals)
 # References:
 - [Practise Regular Expressions Basics](https://www.codecademy.com/learn/introduction-to-regular-expressions)
 - [File Handling overview](https://learn.microsoft.com/en-us/dotnet/standard/io/)
