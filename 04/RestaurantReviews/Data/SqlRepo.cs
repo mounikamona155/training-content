@@ -11,14 +11,22 @@ namespace Data
         }
         public Restaurant Add(Restaurant restaurant)
         {
-            throw new NotImplementedException();
+            string query = @"insert into restaurants (Name, ZipCode)  values (@name, @zipcode)";
+            using SqlConnection con=new SqlConnection(connectionString);
+            con.Open();
+            SqlCommand sqlCommand = new SqlCommand(query, con);
+            sqlCommand.Parameters.AddWithValue("@name", restaurant.Name);
+            sqlCommand.Parameters.AddWithValue("@zipcode",restaurant.ZipCode);
+            int rows = sqlCommand.ExecuteNonQuery();
+            Console.WriteLine(rows + "row(s) added");
+            return restaurant;
         }
 
         public List<Restaurant> GetAllRestaurants()
         {
             List<Restaurant> restaurants = new List<Restaurant>();
             // establish the connection
-            SqlConnection con=new SqlConnection(connectionString);
+            using SqlConnection con=new SqlConnection(connectionString);
             con.Open();
             // fire the query
             // for associates - uncomment first

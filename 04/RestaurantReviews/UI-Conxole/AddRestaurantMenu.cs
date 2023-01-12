@@ -4,17 +4,20 @@ namespace UI_Console
     internal class AddRestaurantMenu : IMenu
     {
         private static Restaurant newRestaurant = new Restaurant();
-        IRepo repo = new FileRepo();
+        // reading connection String from a file
+        static string conStr = File.ReadAllText("../../../connectionString.txt");
+
+        IRepo repo = new SqlRepo(conStr);
         public void Display()
         {
             Console.WriteLine("Enter Pokemon information");
-            Console.WriteLine("[8] Email - " + newRestaurant.Email);
-            Console.WriteLine("[7] Phone - " + newRestaurant.Phone);
+            //Console.WriteLine("[8] Email - " + newRestaurant.Email);
+            //Console.WriteLine("[7] Phone - " + newRestaurant.Phone);
             Console.WriteLine("[6] Close time - " + newRestaurant.CloseTime);
             Console.WriteLine("[5] Open time - " + newRestaurant.OpenTime);
             Console.WriteLine("[4] Zipcode - " + newRestaurant.ZipCode);
             Console.WriteLine("[3] Name - " + newRestaurant.Name);
-            Console.WriteLine("[2] Id - " + newRestaurant.Id);
+            //Console.WriteLine("[2] Id - " + newRestaurant.Id);
             Console.WriteLine("[1] Save");
             Console.WriteLine("[0] Go Back");
         }
@@ -43,10 +46,10 @@ namespace UI_Console
                         Console.ReadLine();
                     }
                     return "Menu";
-                case "2":
-                    Console.WriteLine("Please enter an Id!");
-                    newRestaurant.Id = Convert.ToInt32(Console.ReadLine());
-                    return "AddRestaurant";
+                //case "2":
+                //    Console.WriteLine("Please enter an Id!");
+                //    newRestaurant.Id = Convert.ToInt32(Console.ReadLine());
+                //    return "AddRestaurant";
                 case "3":
                     Console.WriteLine("Please enter a name!");
                     newRestaurant.Name = Console.ReadLine();
@@ -63,14 +66,14 @@ namespace UI_Console
                     Console.WriteLine("Please enter the close time");
                     newRestaurant.CloseTime = Console.ReadLine();
                     return "AddRestaurant";
-                case "7":
-                    Console.WriteLine("Please enter the Phone");
-                    newRestaurant.Phone = Console.ReadLine();                    
-                    return "AddRestaurant";
-                case "8":
-                    Console.WriteLine("Please enter the Email");
-                    newRestaurant.Email = Console.ReadLine();
-                    return "AddRestaurant";
+                //case "7":
+                //    Console.WriteLine("Please enter the Phone");
+                //    newRestaurant.Phone = Console.ReadLine();                    
+                //    return "AddRestaurant";
+                //case "8":
+                //    Console.WriteLine("Please enter the Email");
+                //    newRestaurant.Email = Console.ReadLine();
+                //    return "AddRestaurant";
                 default:
                     Console.WriteLine("Please input a valid response");
                     Console.WriteLine("Please press Enter to continue");
