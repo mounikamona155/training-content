@@ -4,7 +4,11 @@ namespace Data
 {
     public class SqlRepo : IRepo
     {
-        private static readonly string connectionString = "<your connection string >";
+        private readonly string connectionString;
+        public SqlRepo(string connectionString)
+        {
+            this.connectionString = connectionString;
+        }
         public Restaurant Add(Restaurant restaurant)
         {
             throw new NotImplementedException();
@@ -17,6 +21,9 @@ namespace Data
             SqlConnection con=new SqlConnection(connectionString);
             con.Open();
             // fire the query
+            // for associates - uncomment first
+            //string query = "select Id, Name, OpenTime, CloseTime, Zipcode from Training.Restaurants";
+            // for trainer
             string query = "select Id, Name, OpenTime, CloseTime, Zipcode from Restaurants";
             SqlCommand command = new SqlCommand(query, con);
             // execute it
