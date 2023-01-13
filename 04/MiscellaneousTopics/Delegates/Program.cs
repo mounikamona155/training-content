@@ -32,6 +32,13 @@ myDelegate += (float x, float y) => Console.WriteLine(x / y);
 //invoking of the delegate
 //myDelegate(45.89f, 23.55f);
 
-DummyClass.CallBack(80, 40, myDelegate);
+//DummyClass.CallBack(80, 40, myDelegate);
 
 //del();
+
+
+//------------------
+char a = '1', b = '2';
+Console.WriteLine($"a = {a}, b = {b}");
+Algorithm<char>.Swap(ref a, ref b);
+Console.WriteLine($"a = {a}, b = {b}");
