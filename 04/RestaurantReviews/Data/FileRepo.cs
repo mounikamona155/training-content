@@ -42,5 +42,10 @@ namespace Data
             //Deserialize the json string to C# object
             return JsonSerializer.Deserialize<List<Restaurant>>(_jsonString);
         }
+
+        public List<Restaurant> GetAllRestaurantsDisconnected()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

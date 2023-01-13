@@ -1,4 +1,5 @@
-﻿using System.Data.SqlClient;
+﻿using System.Data;
+using System.Data.SqlClient;
 
 namespace Data
 {
@@ -49,6 +50,30 @@ namespace Data
                 }); ;
             }
             return restaurants;
+        }
+
+
+        public List<Restaurant> GetAllRestaurantsDisconnected()
+        {
+            string query = "select Id, Name, Zipcode from Restaurants";
+            using SqlConnection sqlConnection = new SqlConnection(connectionString);
+            SqlDataAdapter adapter = new SqlDataAdapter(query,sqlConnection);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);// fill method will get data from the Db and fill into the dataset
+            List<Restaurant> restaurants = new List<Restaurant>();
+            DataTable dtRestaurants = ds.Tables[0];// first table is indexed to 0
+            foreach (DataRow row in dtRestaurants.Rows)
+            {
+                restaurants.Add(new Restaurant()
+                {
+                    // we can use the column number starting with 0 to represent which column value are we interested in
+                    Id = (int)row[0],
+                    //or we can also provide the column name because it is easier to remeber column name; since sql is case - insensitive the case isn't important while you mention te column name
+                    Name = (string)row["name"],
+                    ZipCode =(string)row["zipcode"]
+                }) ;
+            }
+            return restaurants ;
         }
     }
 }

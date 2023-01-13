@@ -63,7 +63,7 @@
 * This is the actual model that SqlDataAdapter uses to store a "table" in C#
 * You can think of it as a representation of a in-memory table in SQL but in C#
 
-# Architecture of ADO.NET
+# [Architecture of ADO.NET](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/ado-net-architecture)
 * Ha! I scared you there for a second, no we don't need to know another architecture and how they structured and make ADO.net work
 * Instead, we just need to know the two types of architecture and what's their difference
 ## Connected Architecture
@@ -71,7 +71,7 @@
     * At its core that is really all this means
 * As a programmer, that means utilizing SqlConnection, SqlCommand, and (optional) SqlDataReader class so we are doing connected architecture
     * Remember .Open() method? Yeah that initiates a constant connection to the database
-## Disconnected Architecture
+## [Disconnected Architecture](https://www.c-sharpcorner.com/UploadFile/8af593/ado-net-dis-connected-architecture/)
 * Your application only establishes a connection if it needs something with the database
 * As a programmer, you need to utilize SqlDataAdapter class instead 
     * It still needs SqlConnection class to dictate what database you are trying to do operations on
@@ -80,3 +80,8 @@
 
 # References
 - [If you want to have an easy start to Linq reading](https://www.tutorialsteacher.com/linq)
+- [Ado.Net Overview](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/ado-net-overview)
+- [Ado.Net Architecture](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/ado-net-architecture)
+- [Dataype mappings](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/sql-server-data-type-mappings)
+- [Reading using DataReader](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/retrieving-data-using-a-datareader)
+- [DataAdapters vs DataReaders](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/dataadapters-and-datareaders)

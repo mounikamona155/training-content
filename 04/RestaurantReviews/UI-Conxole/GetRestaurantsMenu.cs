@@ -31,7 +31,7 @@ namespace UI_Console
                 case "1":
                     //Logic to display the result
                     Log.Information("Getting all restaurants");
-                    var listOfRestaurant = repo.GetAllRestaurants();
+                    var listOfRestaurant = repo.GetAllRestaurantsDisconnected();
                     Log.Information($"Got list of {listOfRestaurant.Count} restaurants");
                     Log.Information("Reading restaurants about to start");
                     foreach (var r in listOfRestaurant)
