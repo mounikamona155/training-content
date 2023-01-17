@@ -77,11 +77,21 @@
     * It still needs SqlConnection class to dictate what database you are trying to do operations on
         * However, you don't need to use .Open() method
     * Feel free to look up what that code looks like but we don't need to apply it
+## Garbage collection
+- [What is managed code](https://learn.microsoft.com/en-us/dotnet/standard/managed-code)
+- [Automatic memory management](https://learn.microsoft.com/en-us/dotnet/standard/automatic-memory-management)
+- [Fundamentals of Garbage collection](https://learn.microsoft.com/en-us/dotnet/standard/garbage-collection/fundamentals)
+- [Cleaning of unmanaged resources](https://learn.microsoft.com/en-us/dotnet/standard/garbage-collection/unmanaged)
+- [Dispose objects which uses IDiposable](https://learn.microsoft.com/en-us/dotnet/standard/garbage-collection/using-objects)
+- [IDisposable exercises](https://dotnetcademy.net/Learn/2050/Pages/13)
+
+## [Generics](https://learn.microsoft.com/en-us/dotnet/standard/generics/)
 
 # References
 - [If you want to have an easy start to Linq reading](https://www.tutorialsteacher.com/linq)
 - [Ado.Net Overview](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/ado-net-overview)
 - [Ado.Net Architecture](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/ado-net-architecture)
-- [Dataype mappings](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/sql-server-data-type-mappings)
+- [Datatype mappings](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/sql-server-data-type-mappings)
 - [Reading using DataReader](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/retrieving-data-using-a-datareader)
 - [DataAdapters vs DataReaders](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/dataadapters-and-datareaders)
+- [ADO.Net best practises](https://www.codemag.com/Article/2207021/Simplifying-ADO.NET-Code-in-.NET-6-Part-1)
