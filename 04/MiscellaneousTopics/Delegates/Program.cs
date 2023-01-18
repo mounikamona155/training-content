@@ -1,5 +1,5 @@
 ﻿using Delegates;
-
+/*
 //predefined delegates
 //Action - void delegate with no parameters
 // Func<> - any return type delegate with no parameters
@@ -42,3 +42,26 @@ char a = '1', b = '2';
 Console.WriteLine($"a = {a}, b = {b}");
 Algorithm<char>.Swap(ref a, ref b);
 Console.WriteLine($"a = {a}, b = {b}");
+*/
+
+/*LinqBasics basics = new LinqBasics();
+
+int[] marks = { 56, 78, 54, 76, 87, 95 };
+var filteredValues =basics.Filter(marks);
+foreach (var item in filteredValues)
+{
+    Console.WriteLine(item);
+}*/
+Console.WriteLine($"Count of Employees "+Employee.DummyEmployees().Count());
+//var empAgeGreaterThan25=Employee.DummyEmployees().Where(e => e.Age > 25);
+var empSalaryGreaterThan3Lacs = //from emp in Employee.DummyEmployees()
+                                //where emp.Salary>300000
+                                //orderby emp.Name
+                               // select emp;
+    Employee.DummyEmployees().Where(e => e.Salary > 300000).OrderBy(e=>e.Name);
+foreach (var emp in empSalaryGreaterThan3Lacs)
+{
+    Console.WriteLine("================");
+    Console.WriteLine(emp.ToString());
+}
+Console.WriteLine(Employee.DummyEmployees().Max(e=>e.Age));
