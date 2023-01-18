@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace Data
+namespace Models
 {
     public class Restaurant
     {

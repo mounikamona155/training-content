@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using Models;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace Data

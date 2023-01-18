@@ -16,7 +16,7 @@ namespace UI_Console
         {
             Console.WriteLine("Welcome to Restaurant reviews!");
             Console.WriteLine("What would you like to do?");
-            Console.WriteLine("[2] Get all Restaurants");
+            Console.WriteLine("[2] Look for Restaurants");
             Console.WriteLine("[1] Add a new Restaurant");
             Console.WriteLine("[0] Exit");
         }

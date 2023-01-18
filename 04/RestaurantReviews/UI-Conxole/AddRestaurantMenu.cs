@@ -1,4 +1,6 @@
 ﻿using Data;
+using Models;
+
 namespace UI_Console
 {
     internal class AddRestaurantMenu : IMenu

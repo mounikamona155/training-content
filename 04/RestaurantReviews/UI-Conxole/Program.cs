@@ -8,8 +8,8 @@ namespace UI_Console
         {
             // Initialize the logger
             Log.Logger = new LoggerConfiguration()
-        .WriteTo.File(@"..\..\..\Logs\logs.txt", rollingInterval: RollingInterval.Day, rollOnFileSizeLimit: true)
-        .CreateLogger();
+                            .WriteTo.File(@"..\..\..\Logs\logs.txt", rollingInterval: RollingInterval.Day, rollOnFileSizeLimit: true)
+                            .CreateLogger();
 
             Log.Logger.Information("----Program starts----");
             UserInteraction.GetRestaurants();
