@@ -1,6 +1,9 @@
 ﻿using Models;
+using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
 
 namespace Data
 {
@@ -54,6 +57,42 @@ namespace Data
                 }
             }
             catch(SqlException ex)
+            {
+                throw;
+            }
+            return restaurants;
+        }
+
+        public async Task<List<Restaurant>> GetAllRestaurantsAsync()
+        {
+            List<Restaurant> restaurants = new List<Restaurant>();
+            // establish the connection
+            try
+            {
+                using SqlConnection con = new SqlConnection(connectionString);
+                con.Open();
+                // fire the query
+                // for associates - uncomment first
+                //string query = "select Id, Name, OpenTime, CloseTime, Zipcode from Training.Restaurants";
+                // for trainer
+                string query = "select Id, Name, OpenTime, CloseTime, Zipcode from Restaurants";
+                using SqlCommand command = new SqlCommand(query, con);
+                // execute it
+                using SqlDataReader reader = await command.ExecuteReaderAsync();
+                // process the output
+                while (reader.Read())
+                {
+                    restaurants.Add(new Restaurant()
+                    {
+                        Id = reader.GetInt32(0),
+                        Name = reader.GetString(1),
+                        OpenTime = reader[2].ToString(),
+                        CloseTime = reader[3].ToString(),
+                        ZipCode = reader.GetString(4)
+                    }); ;
+                }
+            }
+            catch (SqlException ex)
             {
                 throw;
             }

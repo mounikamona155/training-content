@@ -52,7 +52,7 @@ foreach (var item in filteredValues)
 {
     Console.WriteLine(item);
 }*/
-Console.WriteLine($"Count of Employees "+Employee.DummyEmployees().Count());
+/*Console.WriteLine($"Count of Employees "+Employee.DummyEmployees().Count());
 //var empAgeGreaterThan25=Employee.DummyEmployees().Where(e => e.Age > 25);
 var empSalaryGreaterThan3Lacs = //from emp in Employee.DummyEmployees()
                                 //where emp.Salary>300000
@@ -65,3 +65,7 @@ foreach (var emp in empSalaryGreaterThan3Lacs)
     Console.WriteLine(emp.ToString());
 }
 Console.WriteLine(Employee.DummyEmployees().Max(e=>e.Age));
+*/
+AsynchProgramming.Method1();
+AsynchProgramming.LongMethod();
+Console.WriteLine("Program Ends");

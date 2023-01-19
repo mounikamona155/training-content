@@ -12,7 +12,7 @@ namespace BusinessLogic
         }
         public IEnumerable<Restaurant> GetRestaurants()
         {
-            return repo.GetAllRestaurants().ToList();
+            return repo.GetAllRestaurantsAsync().Result;
         }
 
         public IEnumerable<Restaurant> GetRestaurantsByZipcode(string zipcode)

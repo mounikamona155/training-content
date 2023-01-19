@@ -1,5 +1,7 @@
 ﻿global using Serilog;
 using Data;
+using System;
+
 namespace UI_Console
 {
     class Program

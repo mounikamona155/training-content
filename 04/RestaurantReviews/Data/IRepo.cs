@@ -20,6 +20,7 @@ namespace Data
         /// </summary>
         /// <returns>List of all restaurants objects in the collection of Type List<Restaurant></returns>
         List<Restaurant> GetAllRestaurants();
+        Task<List<Restaurant>> GetAllRestaurantsAsync();
         List<Restaurant> GetAllRestaurantsDisconnected();
     }
 }

@@ -77,7 +77,14 @@
     * It still needs SqlConnection class to dictate what database you are trying to do operations on
         * However, you don't need to use .Open() method
     * Feel free to look up what that code looks like but we don't need to apply it
-    
+
+## [Sql Injection](https://www.w3schools.com/sql/sql_injection.asp)
+- SQL injection is a code injection technique that might destroy your database.
+- [How can you avoid Sql Injection](https://social.technet.microsoft.com/wiki/contents/articles/36264.sql-protect-your-data-against-sql-injection.aspx)
+    - Using Sql Parameters
+    - Using Stored procedures
+    - using ORM (Object Relational Mapper) - Ex Entity Framework, nHibernate etc....
+
 ## [Garbage Collection](https://learn.microsoft.com/en-us/dotnet/standard/garbage-collection/fundamentals)
 ## [Memory Management in .Net](https://medium.com/c-programming/c-memory-management-part-1-c03741c24e4b)
 - The GC allocates heap segments where each segment is a contiguous range of memory.
@@ -325,21 +332,23 @@
 - [IDisposable exercises](https://dotnetcademy.net/Learn/2050/Pages/13)
 
 ## [Generics](https://learn.microsoft.com/en-us/dotnet/standard/generics/)
-# Advance Topics
-# Extra topics
-## [What is a fullstack developer](https://www.w3schools.com/whatis/whatis_fullstack.asp)
-* A full-stack developer helps build and maintain both the front-end and the back-end of a website.
-* The front end (the parts of a website a user sees and interacts with) and the back end (the behind-the-scenes data storage and processing) require different skill sets.
-* Since full-stack developers are involved with all aspects of the development process, they must have expertise in both.
-### What does a full-stack developer do?
-* Full-stack developers design and create websites and applications for various platforms. 
-* A full-stack developer’s job description might include the following:
-    * Develop and maintain web services and interfaces
-    * Contribute to front-end and back-end development processes
-    * Build new product features or APIs
-    * Perform tests, troubleshoot software, and fix bugs
-    * Collaborate with other departments on projects and sprints
 
+# Advance Topics
+## [Asynchronous Programming](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/)
+### What is synchronous Programming?
+- We write the programs in step by step manner and each step has to finish to start with next step.
+- But if any step takes more than usual time to run that creates a bad user experience. For Eg: something is memory intensive operation, network use operation, intensive computation.
+### Thread 
+- A thread is a process/function which runs a piece of program
+- Any .Net program run via CLR as CLR assigns a thread to the starting point of the program (Main() is the entry point for C# programs).
+- Mutli threading is a way to do multi-tasking but threads are not manageable so this is why we might end up with inefficent use of multi-threading.
+
+### Task Asynchronous programming
+- Task is a class which comes under System.Threading.Tasks namespace.
+- It is a class library/Api for multi-tasking, which has wrapper classes for threading and multi-threading in C#.
+- Benefits: **T**ask **P**arallel **L**ibrary is an abstract way of using the Threading in C# which uses the cores efficiently.
+- Use **async** and **await** keywords as shortcut/shorthand to implement asynchrounous Programming.
+-
 ## [SOLID Principles](https://medium.com/backticks-tildes/the-s-o-l-i-d-principles-in-pictures-b34ce2f1e898)
 - SOLID is an acronym for the first five object-oriented design (OOD) principles by Robert C. Martin
 - These principles establish practices that lend to developing software with considerations for maintaining and extending as the project grows.
@@ -386,6 +395,7 @@
   - This principle says a Class should not be fused with the tool it uses to execute an action. Rather, it should be fused to the interface that will allow the tool to connect to the Class.
   - It also says that both the Class and the interface should not know how the tool works. However, the tool needs to meet the specification of the interface.
   - This principle aims at reducing the dependency of a high-level Class on the low-level Class by introducing an interface.
+  - [Video Tutorial](https://www.youtube.com/watch?v=HLFbeC78YlU&list=PL6n9fhu94yhXjG1w2blMXUzyDrZ_eyOme)
 ## [Design Patterns](https://sourcemaking.com/design_patterns)
 - Design patterns are reusable solutions to the problems that we encounter in the day to day programming. They are generally targeted at solving the problems of object generation and integration. 
 - In other words, Design patterns acts as templates which can be applied to the real-world programming problems.
@@ -424,6 +434,21 @@
 - Singleton supports object disposal
 - Singleton object is stored on heap
 - Singleton objects can be cloned
+
+# Extra topics
+## [What is a fullstack developer](https://www.w3schools.com/whatis/whatis_fullstack.asp)
+* A full-stack developer helps build and maintain both the front-end and the back-end of a website.
+* The front end (the parts of a website a user sees and interacts with) and the back end (the behind-the-scenes data storage and processing) require different skill sets.
+* Since full-stack developers are involved with all aspects of the development process, they must have expertise in both.
+### What does a full-stack developer do?
+* Full-stack developers design and create websites and applications for various platforms. 
+* A full-stack developer’s job description might include the following:
+    * Develop and maintain web services and interfaces
+    * Contribute to front-end and back-end development processes
+    * Build new product features or APIs
+    * Perform tests, troubleshoot software, and fix bugs
+    * Collaborate with other departments on projects and sprints
+
 # References
 - [If you want to have an easy start to Linq reading](https://www.tutorialsteacher.com/linq)
 - [Ado.Net Overview](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/ado-net-overview)
@@ -432,3 +457,10 @@
 - [Reading using DataReader](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/retrieving-data-using-a-datareader)
 - [DataAdapters vs DataReaders](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/dataadapters-and-datareaders)
 - [ADO.Net best practises](https://www.codemag.com/Article/2207021/Simplifying-ADO.NET-Code-in-.NET-6-Part-1)
+
+
+# To be come a programming expert
+- This is a good practise to read and understand programming concepts from the source. Tips include for the future of tech programming career.
+- Read white papers - which very boring to read as they are research white papers but also has the most important information.
+- Get a good grasp on concept first like OOP, SOLID principles, Design Patterns etc... and over the period of time try to practise it a fun programming.
+- Follow some industry experts on their social platforms - like Robert C Martin, Martin Fowler as they are industry pioneers

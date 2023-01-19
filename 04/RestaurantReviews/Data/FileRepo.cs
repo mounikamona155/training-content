@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Text.Json;// library to serialize and deserialize objects to json or vice-versa
 using System.Text.Json.Serialization;
 using Models;
+using System.IO;
 
 namespace Data
 {
@@ -45,6 +46,26 @@ namespace Data
         }
 
         public List<Restaurant> GetAllRestaurantsDisconnected()
+        {
+            throw new NotImplementedException();
+        }
+
+        Restaurant IRepo.Add(Restaurant restaurant)
+        {
+            throw new NotImplementedException();
+        }
+
+        List<Restaurant> IRepo.GetAllRestaurants()
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<List<Restaurant>> IRepo.GetAllRestaurantsAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        List<Restaurant> IRepo.GetAllRestaurantsDisconnected()
         {
             throw new NotImplementedException();
         }
