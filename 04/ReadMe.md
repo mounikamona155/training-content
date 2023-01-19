@@ -335,6 +335,7 @@
 
 # Advance Topics
 ## [Asynchronous Programming](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/)
+### [Easy read for async programming from GFG](https://www.geeksforgeeks.org/async-and-await-in-c-sharp/)
 ### What is synchronous Programming?
 - We write the programs in step by step manner and each step has to finish to start with next step.
 - But if any step takes more than usual time to run that creates a bad user experience. For Eg: something is memory intensive operation, network use operation, intensive computation.
