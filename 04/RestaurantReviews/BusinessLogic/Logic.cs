@@ -5,7 +5,7 @@ namespace BusinessLogic
 {
     public class Logic : ILogic
     {
-        IRepo repo;
+        SqlRepo repo;
         public Logic(string constr)
         {
             repo = new SqlRepo(constr);

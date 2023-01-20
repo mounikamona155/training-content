@@ -44,30 +44,5 @@ namespace Data
             //Deserialize the json string to C# object
             return JsonSerializer.Deserialize<List<Restaurant>>(_jsonString);
         }
-
-        public List<Restaurant> GetAllRestaurantsDisconnected()
-        {
-            throw new NotImplementedException();
-        }
-
-        Restaurant IRepo.Add(Restaurant restaurant)
-        {
-            throw new NotImplementedException();
-        }
-
-        List<Restaurant> IRepo.GetAllRestaurants()
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<List<Restaurant>> IRepo.GetAllRestaurantsAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        List<Restaurant> IRepo.GetAllRestaurantsDisconnected()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

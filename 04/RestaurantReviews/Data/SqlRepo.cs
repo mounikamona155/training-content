@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    public class SqlRepo : IRepo
+    public class SqlRepo : IRepo, ISqlRepo //multiple inheritance
     {
         private readonly string connectionString;
         public SqlRepo(string connectionString)
