@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Data\Data.csproj" />
+    <ProjectReference Include="..\Data_EF_DBFirst\Data_EF_DBFirst.csproj" />
     <ProjectReference Include="..\Models\Models.csproj" />
   </ItemGroup>
 

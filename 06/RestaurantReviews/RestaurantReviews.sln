@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI-Console", "UI-Conxole\UI
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{34FC3408-9FCD-48D0-A177-D7F5CE73EEF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic", "BusinessLogic\BusinessLogic.csproj", "{03765BC9-3072-4643-A285-CFD6778644AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLogic", "BusinessLogic\BusinessLogic.csproj", "{03765BC9-3072-4643-A285-CFD6778644AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{D09AB255-B4D1-4789-BEB0-8171F2683C47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{D09AB255-B4D1-4789-BEB0-8171F2683C47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data_EF_DBFirst", "Data_EF_DBFirst\Data_EF_DBFirst.csproj", "{D892F2D3-9E84-43AD-A3FC-18BA6048FFB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{D09AB255-B4D1-4789-BEB0-8171F2683C47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D09AB255-B4D1-4789-BEB0-8171F2683C47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D09AB255-B4D1-4789-BEB0-8171F2683C47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D892F2D3-9E84-43AD-A3FC-18BA6048FFB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D892F2D3-9E84-43AD-A3FC-18BA6048FFB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D892F2D3-9E84-43AD-A3FC-18BA6048FFB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D892F2D3-9E84-43AD-A3FC-18BA6048FFB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

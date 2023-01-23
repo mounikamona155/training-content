@@ -8,6 +8,14 @@ namespace UI_Console
     {
         static void Main(string[] args)
         {
+            //Calling restaurants from EF Library 
+            Data_EF_DBFirst.IRepo repo = new Data_EF_DBFirst.SqlRepo();
+            var allRestaurants= repo.GetRestaurants();
+            foreach (var restaurant in allRestaurants)
+            {
+                Console.WriteLine($"{restaurant.Id} {restaurant.Name}");
+            }
+            /*
             // Initialize the logger
             Log.Logger = new LoggerConfiguration()
                             .WriteTo.File(@"..\..\..\Logs\logs.txt", rollingInterval: RollingInterval.Day, rollOnFileSizeLimit: true)
@@ -48,7 +56,7 @@ namespace UI_Console
                         Console.ReadLine();
                         break;
                 }
-            }
+            }*/
 
         }
     }

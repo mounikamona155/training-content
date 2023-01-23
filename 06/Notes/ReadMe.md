@@ -48,6 +48,42 @@
 - [NUnit](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-nunit)
 - [Must watch code Kata by Uncle bob](https://www.youtube.com/watch?v=kScFczWbwRM)
 - [Mocking video](https://learn.microsoft.com/en-us/shows/visual-studio-toolbox/unit-testing-moq-framework)
+
 # EF Core
+## What is ORM?
+- **O**bject **R**elational **M**apper - It helps to map Server side language objects to relational entities of database.
+- By Using ORM the developer is at ease as not much of proficiency is required to have appliaction connected with database.
+- Using ORM a dev has more control over database and its entities via code.
+- The dev do not need to write complex sql queries and remember the complicated syntax either.
+- Eg: EntityFramework, EntityFrameworkCore, nHibernate (for java) etc...
+- ORM is just a wrapper class libraray over the database middleware like ADO.Net
+
+### Packages
+Install the listed packages in your DL project through .Net CLI or Nuget Package Manager:
+- `Microsoft.EntityFrameworkCore.Design` or in VS code: ```dotnet add package Microsoft.EntityFrameworkCore.Design```
+    - This should also be installed in your startup project
+- `Microsoft.EntityFrameworkCore.Tools` or VSCode : ```dotnet add package Microsoft.EntityFrameworkCore.Tools```
+- `Microsoft.EntityFrameworkCore.SqlServer` or in VScode:  ```dotnet add package Npgsql.EntityFrameworkCore.SQLServer```
+- `Microsoft.Extensions.Configuration.Json` or in VSCode  ```dotnet add package Microsoft.Extensions.Configuration.Json```
+
+### DB First Steps
+1. Have the following:
+    - Data Layer
+    - The necessary packages installed in DL project
+2. Run the long scaffold code in the DL project:
+    - With Fluent API in Visual Studio PMC - `Scaffold-DbContext "Server=tcp:<server-name>.database.windows.net,1433;Initial Catalog=<Db name>; User ID=<user id>;Password=<password>;" -Provider Microsoft.EntityFrameworkCore.SqlServer -o Entities -Tables table1, table2, table3`
+    - With Fluent API in VSCode terminal - `dotnet ef dbcontext scaffold "Server=tcp:<server name>.database.windows.net,1433;Initial Catalog=<db name>;User ID=<userid>;Password=<password>" Microsoft.EntityFrameworkCore.SqlServer --force -o Entities`
+      or 
+    - Connection String with  Data Annotaions in Visual Studio PMC - `Scaffold-DbContext "Server=tcp:<server-name>.database.windows.net,1433;Initial Catalog=<Db name>; User ID=<user id>;Password=<password>;" -Provider Microsoft.EntityFrameworkCore.SqlServer -DataAnnotations -o Entities -Tables table1, table2, table3`
+    - Connection String with Data Annotations in VSCode terminal : `dotnet ef dbcontext scaffold "Server=tcp:<server name>.database.windows.net,1433;Initial Catalog=<db name>;User ID=<user id>;Password=<Password>" Microsoft.EntityFrameworkCore.SqlServer --force --data-annotations -o Entities`
+3. Edit the DBContext:
+    - Change the name if its weird
+    - Edit the onconfiguring method to safely refer to the connection string using appsettings.json
+4. Any major change to table structure:
+    - If you add a new table, delete a table: go to step 2
+    - If you've altered columns in an existing table: edit the necessary entity to reflect those changes
+
+Other things you'll need with DBFirst:
+- A Mapper to map your DB entities to BL entities
 - [Tutorial guide](https://www.entityframeworktutorial.net/what-is-entityframework.aspx)
 - [Exercises](https://learn.microsoft.com/en-us/training/modules/persist-data-ef-core/)
