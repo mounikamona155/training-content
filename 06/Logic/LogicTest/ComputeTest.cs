@@ -1,5 +1,7 @@
 using NUnit.Framework;
 using Logic;
+using Moq;
+
 namespace LogicTest
 {
     // in this [] is known as to be annotation/attribute - TestFixture is an annotation/attribute which tells thatvthe class is used for testing using NUnit.
@@ -39,5 +41,18 @@ namespace LogicTest
         {
             compute = null;
         }
+
+        [Test]
+        [TestCase(13)]
+        //[Ignore("It is work in progress but not testable at the moment")] // Ignore means this unit test methid will skip from all tests execution
+        public void Test_IsPrime(int x)
+        {
+            Mock<Compute> mock = new Mock<Compute>();
+            mock.Setup(n=>n.IsPrime(x)).Returns(true);
+
+            Assert.AreEqual(true, mock.Object.IsPrime(x));
+            
+        }
+
     }
 }
