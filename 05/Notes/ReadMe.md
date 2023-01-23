@@ -6,12 +6,12 @@
   - MSTest, **[NUnit](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-nunit)**, xUnit.
 - Test-driven development (TDD) is a software development process relying on software requirements being converted to test cases before software is fully developed, and tracking all software development by repeatedly testing the software against all test cases. This is as opposed to software being developed first and test cases created later.
 - Mantra: Red, Green, Refactor
-- Structure: Arrange, Act, Assert
+- Structure/Phases of Unit Tests: Arrange, Act, Assert
 - Process:
     - Start with degenerate test cases first
     - As the tests get more specific the code becomes more generic
 
-## The flow of TDD
+## The flow of [TDD](https://www.guru99.com/test-driven-development.html)
 1. Create a test case - What you expect the feature is suppose to do
 2. Running the test case will fail the first time - obviously since you haven't created the actual implementation details to make it pass
 3. Write code so the new test case will pass
