@@ -49,6 +49,32 @@
 - [Must watch code Kata by Uncle bob](https://www.youtube.com/watch?v=kScFczWbwRM)
 - [Mocking video](https://learn.microsoft.com/en-us/shows/visual-studio-toolbox/unit-testing-moq-framework)
 
+# [Repository Design Pattern](https://www.codeguru.com/csharp/repository-pattern-c-sharp/)
+- The Repository Design Pattern is one of the most popular design patterns to achieve such separation between the actual database, queries and other data access logic from the rest of the application.
+- This pattern in C# is used to create an abstraction layer between the data access layer and the business logic layer of the application.That abstraction layer is generally called the Repository Layer and it will directly communicate with the data access layer, gets the data and provides it to the business logic layer.
+- In other words, we can say that a Repository Design Pattern acts as a middle layer between the rest of the application and the data access logic
+- That means a repository pattern isolates all the data access code from the rest of the application.
+- As you can see in our code I have started every data layer with `IRepo` interface and place its separate implementations like for `FileRepo`, then `SqlRepo` and now we can have Repository for Data layer with EFCore.
+- Advantages:
+    - It centralizes data logic or business logic and service logic.
+    - It gives a substitution point for the unit tests.
+    - Provides a flexible architecture.
+    - If you want to modify the data access logic or business access logic, you don't need to change the repository logic.
+    - We can implement the features of DRY(Do not repeat yourself) Principle using the Repository Pattern.
+    - One of the most important aspects of this strategy is the separation between the actual database, queries and other data access logic from the rest of the application.So that if we do any changes in any of this logic, then that should affect other logic.
+
+# [Dependency Injection](https://www.c-sharpcorner.com/UploadFile/85ed7a/dependency-injection-in-C-Sharp/)
+- Dependency Injection (DI) is a software design pattern. 
+- It allows us to develop loosely-coupled code. 
+- The intent of Dependency Injection is to make code maintainable as well as testable. 
+- Advantages:
+    - Reusability of code
+    - Ease of refactoring
+    - Ease of testing
+
+- those who wonder what is [refactoring](https://refactoring.guru/refactoring)?
+    - Refactoring is a systematic process of improving code without creating new functionality that can transform a mess into clean code and simple design
+
 # EF Core
 ## What is ORM?
 - **O**bject **R**elational **M**apper - It helps to map Server side language objects to relational entities of database.
@@ -56,15 +82,29 @@
 - Using ORM a dev has more control over database and its entities via code.
 - The dev do not need to write complex sql queries and remember the complicated syntax either.
 - Eg: EntityFramework, EntityFrameworkCore, nHibernate (for java) etc...
-- ORM is just a wrapper class libraray over the database middleware like ADO.Net
+- The ORM that we will be using is Entity Framework Core
+- ORM is just a wrapper class library over the database middleware like ADO.Net
 
-### Packages
+## Entity Framework Core
+* One of the popular ORM for .NET core
+* It allows us to work with a database by using .NET objects and almost completely removing the need for most data-access code you usually have to write (unlike our ADO.NET)
+## Two approaches to EF
+* Database first approach
+    * This is when you created a database architecture/schema first
+    * It will create the entities and DBcontext for us based on the database
+* Code first approach
+    * This is when you create a .NET application first
+    * It will create the database for you and establish the relationships as well based on the models
+    * You would need to create the DBContext
+
+### Setup, installation and configuration (most of the steps are common for code first and Db first)
 Install the listed packages in your DL project through .Net CLI or Nuget Package Manager:
 - `Microsoft.EntityFrameworkCore.Design` or in VS code: ```dotnet add package Microsoft.EntityFrameworkCore.Design```
     - This should also be installed in your startup project
 - `Microsoft.EntityFrameworkCore.Tools` or VSCode : ```dotnet add package Microsoft.EntityFrameworkCore.Tools```
 - `Microsoft.EntityFrameworkCore.SqlServer` or in VScode:  ```dotnet add package Npgsql.EntityFrameworkCore.SQLServer```
 - `Microsoft.Extensions.Configuration.Json` or in VSCode  ```dotnet add package Microsoft.Extensions.Configuration.Json```
+- once you Install the packages run `dotnet ef` command in PMC to verify if Entity Framework is installed. You will see some EF picture with a unicorn as a symbol that EFCore has been installed successfully
 
 ### DB First Steps
 1. Have the following:
@@ -82,6 +122,26 @@ Install the listed packages in your DL project through .Net CLI or Nuget Package
 4. Any major change to table structure:
     - If you add a new table, delete a table: go to step 2
     - If you've altered columns in an existing table: edit the necessary entity to reflect those changes
+
+## Useful terminology/artificats to know when working with EF
+* DBContext
+    * Represents a session with the database
+    * So any CRUD operations will start here
+    * Also used to configure how EF will construct your database architecture using **Fluent API** in OnModelCreating() method
+* Migration
+    * They are a snapshot of the database architecture given the current state of your models
+    * So if you change your models/db architecture, you would need to create another migration and update the database
+* Entities
+    * It is the model version of the tables of your database
+    * So a Student table in Database will have a student entity in EF core
+* Relationships
+    * Same thing as multiplicity in SQL
+    * They way you signify the relationships will be use of data annotations/Fluent API/Model structure
+* [Data Annotations](https://www.entityframeworktutorial.net/code-first/dataannotation-in-code-first.aspx)
+    * When you use Scaffolding there is an option to add flag `-DataAnnotations` which means you will see entity classes with some attributes/annotations on the top like `[Key]`, `[StringLength]` etc
+    * Data Annotations attributes are .NET attributes which can be applied on an entity class or properties to override default conventions in EF.
+    * Data annotation attributes are included in the `System.ComponentModel.DataAnnotations` and `System.ComponentModel.DataAnnotations.Schema` 
+* **Note**: Data annotations only give you a subset of configuration options. Fluent API provides a full set of configuration options available in Code-First. This is why Microsoft suggests to use **[Fluent API](https://www.entityframeworktutorial.net/code-first/fluent-api-in-code-first.aspx)** instead of Data Annotations.
 
 Other things you'll need with DBFirst:
 - A Mapper to map your DB entities to BL entities
