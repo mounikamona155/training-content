@@ -8,10 +8,10 @@ namespace Data_EF_DBFirst.Entities;
 
 public partial class Restaurant
 {
-    [Key]
+    [Key] // This means this property is a primary Key
     public int Id { get; set; }
 
-    [StringLength(25)]
+    [StringLength(25)] // varchar(25)
     [Unicode(false)]
     public string? Name { get; set; }
 
@@ -40,5 +40,5 @@ public partial class Restaurant
     public string? Zipcode { get; set; }
 
     [InverseProperty("Restaurant")]
-    public virtual ICollection<Review> Reviews { get; } = new List<Review>();
+    public virtual ICollection<Review> Reviews { get; } = new List<Review>();// this is denoting one to manmy multiplicity
 }

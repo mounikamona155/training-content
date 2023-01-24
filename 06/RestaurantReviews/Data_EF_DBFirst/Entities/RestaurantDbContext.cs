@@ -6,7 +6,7 @@ namespace Data_EF_DBFirst.Entities;
 
 public partial class RestaurantDbContext : DbContext
 {
-    string path = File.ReadAllText("../../../connectionString.txt");
+    string path = File.ReadAllText("../../../../UI-Conxole/connectionString.txt");
     public RestaurantDbContext()
     {
     }

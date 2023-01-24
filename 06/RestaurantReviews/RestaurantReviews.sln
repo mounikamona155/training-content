@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLogic", "BusinessLo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{D09AB255-B4D1-4789-BEB0-8171F2683C47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data_EF_DBFirst", "Data_EF_DBFirst\Data_EF_DBFirst.csproj", "{D892F2D3-9E84-43AD-A3FC-18BA6048FFB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data_EF_DBFirst", "Data_EF_DBFirst\Data_EF_DBFirst.csproj", "{D892F2D3-9E84-43AD-A3FC-18BA6048FFB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataFluentApi", "DataFluentApi\DataFluentApi.csproj", "{E33B161C-DA5D-4429-A952-B792E8B475B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{D892F2D3-9E84-43AD-A3FC-18BA6048FFB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D892F2D3-9E84-43AD-A3FC-18BA6048FFB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D892F2D3-9E84-43AD-A3FC-18BA6048FFB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E33B161C-DA5D-4429-A952-B792E8B475B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E33B161C-DA5D-4429-A952-B792E8B475B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E33B161C-DA5D-4429-A952-B792E8B475B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E33B161C-DA5D-4429-A952-B792E8B475B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

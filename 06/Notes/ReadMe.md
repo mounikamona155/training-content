@@ -88,6 +88,15 @@
 ## Entity Framework Core
 * One of the popular ORM for .NET core
 * It allows us to work with a database by using .NET objects and almost completely removing the need for most data-access code you usually have to write (unlike our ADO.NET)
+
+## Benefits of using EFCore:
+- Compatible with .Net and its versions for Windows, macOS, Linux etc...
+- Dev team do not need to be expert in complex SQL operations
+- It is easy to use as every this is Object Oriented
+- It also encapsulates complex ADO.Net code (as a developer you don't need to be well versed with ADO.Net)
+- Since its an encapsulation to ADO.Net it helps to prevent attacks like Sql Injection. Although you can still use queries too for any complex scenario.
+- Querying using EF is simply done by using Linq.
+
 ## Two approaches to EF
 * Database first approach
     * This is when you created a database architecture/schema first
@@ -128,7 +137,7 @@ Install the listed packages in your DL project through .Net CLI or Nuget Package
     * Represents a session with the database
     * So any CRUD operations will start here
     * Also used to configure how EF will construct your database architecture using **Fluent API** in OnModelCreating() method
-* Migration
+* Migration - for code - first approach only
     * They are a snapshot of the database architecture given the current state of your models
     * So if you change your models/db architecture, you would need to create another migration and update the database
 * Entities
