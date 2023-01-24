@@ -10,8 +10,9 @@ namespace Models
         }
         public int Id { get; set; }
         public string Name { get; set; }
-        public string OpenTime { get; set; }
-        public string CloseTime { get; set; }
+        public string Cuisine { get; set; }
+        public TimeSpan OpenTime { get; set; }
+        public TimeSpan CloseTime { get; set; }
         public string Phone { get; set; }
         /*public string Phone
         {
@@ -35,7 +36,7 @@ namespace Models
         public string ZipCode { get; set; }
         public override string ToString()
         {
-            return $"{Id} {Name} {OpenTime}-{CloseTime}, {Email}, {Phone}, {Website}, {ZipCode} ";
+            return $"{Id} {Name} {OpenTime.ToString()}-{CloseTime.ToString()}, {Email}, {Phone}, {Website}, {ZipCode} ";
         }
     }
 }

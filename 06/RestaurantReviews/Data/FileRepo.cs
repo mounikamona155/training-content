@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Data
 {
-    public class FileRepo : IRepo
+    public class FileRepo : IRepo<Restaurant>
     {
         private string _filePath = "../../../../Data/FileDatabase/";
         private string _jsonString;

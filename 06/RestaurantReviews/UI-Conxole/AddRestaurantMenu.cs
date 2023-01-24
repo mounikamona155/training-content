@@ -1,7 +1,8 @@
-﻿using Data;
+﻿using EF=DataFluentApi;
 using Models;
 using System;
 using System.IO;
+using BusinessLogic;
 
 namespace UI_Console
 {
@@ -11,7 +12,7 @@ namespace UI_Console
         // reading connection String from a file
         static string conStr = File.ReadAllText("../../../connectionString.txt");
 
-        IRepo repo = new SqlRepo(conStr);
+        ILogic repo = new Logic();
         public void Display()
         {
             Console.WriteLine("Enter Pokemon information");
@@ -39,7 +40,7 @@ namespace UI_Console
                     try
                     {
                         Log.Information("Adding restaurant \n" + newRestaurant);
-                        repo.Add(newRestaurant);
+                        //repo.Add(newRestaurant);
                         Log.Information("Successful at adding Restaurant!");
                     }
                     catch (System.Exception exc)
@@ -64,11 +65,11 @@ namespace UI_Console
                     return "AddRestaurant";
                 case "5":
                     Console.WriteLine("Please enter the Open time");
-                    newRestaurant.OpenTime = Console.ReadLine();
+                    newRestaurant.OpenTime = TimeSpan.Parse(Console.ReadLine());
                     return "AddRestaurant";
                 case "6":
                     Console.WriteLine("Please enter the close time");
-                    newRestaurant.CloseTime = Console.ReadLine();
+                    newRestaurant.CloseTime = TimeSpan.Parse(Console.ReadLine());
                     return "AddRestaurant";
                 //case "7":
                 //    Console.WriteLine("Please enter the Phone");

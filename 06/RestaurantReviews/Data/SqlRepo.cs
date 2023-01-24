@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    public class SqlRepo : IRepo, ISqlRepo //multiple inheritance
+    public class SqlRepo : IRepo<Restaurant>, ISqlRepo //multiple inheritance
     {
         private readonly string connectionString;
         public SqlRepo(string connectionString)
@@ -50,8 +50,8 @@ namespace Data
                     {
                         Id = reader.GetInt32(0),
                         Name = reader.GetString(1),
-                        OpenTime = reader[2].ToString(),
-                        CloseTime = reader[3].ToString(),
+                        OpenTime = (TimeSpan)reader[2],
+                        CloseTime = (TimeSpan)reader[3],
                         ZipCode = reader.GetString(4)
                     }); ;
                 }
@@ -86,8 +86,8 @@ namespace Data
                     {
                         Id = reader.GetInt32(0),
                         Name = reader.GetString(1),
-                        OpenTime = reader[2].ToString(),
-                        CloseTime = reader[3].ToString(),
+                        OpenTime =  (TimeSpan)reader[2],
+                        CloseTime = (TimeSpan)reader[3],
                         ZipCode = reader.GetString(4)
                     }); ;
                 }

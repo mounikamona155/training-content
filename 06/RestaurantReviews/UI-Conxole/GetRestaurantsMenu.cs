@@ -11,7 +11,7 @@ namespace UI_Console
         static string conStr = File.ReadAllText("../../../connectionString.txt");
       
         //IRepo repo = new SqlRepo(conStr);
-        ILogic repo=new Logic(conStr);
+        ILogic repo=new Logic();
         public void Display()
         {
             Console.WriteLine("Please select an option to filter the Restaurant reviews database");
