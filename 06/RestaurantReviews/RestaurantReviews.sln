@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data_EF_DBFirst", "Data_EF_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataFluentApi", "DataFluentApi\DataFluentApi.csproj", "{E33B161C-DA5D-4429-A952-B792E8B475B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{A1FE7DFB-40F9-45CE-8DF9-E093E82EDCE9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{E33B161C-DA5D-4429-A952-B792E8B475B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E33B161C-DA5D-4429-A952-B792E8B475B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E33B161C-DA5D-4429-A952-B792E8B475B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1FE7DFB-40F9-45CE-8DF9-E093E82EDCE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1FE7DFB-40F9-45CE-8DF9-E093E82EDCE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1FE7DFB-40F9-45CE-8DF9-E093E82EDCE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1FE7DFB-40F9-45CE-8DF9-E093E82EDCE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,4 @@
-﻿using EF = DataFluentApi.Entities;
+﻿using Data = DataFluentApi.Entities;
 namespace BusinessLogic
 {
     /// <summary>
@@ -11,15 +11,15 @@ namespace BusinessLogic
         /// </summary>
         /// <param name="r"></param>
         /// <returns>Models.Restaurant</returns>
-        public static Models.Restaurant Map(EF.Restaurant r)
+        public static Models.Restaurant Map(Data.Restaurant r)
         {
             return new Models.Restaurant()
             {
                 Id = r.Id,
                 Name = r.Name,
-                //CloseTime = r.CloseTime.Value,
+                CloseTime =Validation.HandleTimeSpanNulls(r.CloseTime),
                 Cuisine = r.Cuisine,
-                //OpenTime = r.OpenTime.Value,
+                OpenTime = Validation.HandleTimeSpanNulls(r.OpenTime),
                 Email = r.Email,
                 Phone = r.Phone,
                 Website = r.Website,
@@ -31,7 +31,7 @@ namespace BusinessLogic
         /// </summary>
         /// <param name="restaurants"></param>
         /// <returns>IEnumerable<Models.Restaurant></returns>
-        public static IEnumerable<Models.Restaurant> Map(IEnumerable<EF.Restaurant> restaurants){
+        public static IEnumerable<Models.Restaurant> Map(IEnumerable<Data.Restaurant> restaurants){
               return restaurants.Select(Map);
         }
 
