@@ -47,7 +47,10 @@
     - Light weight messaging using **Json**.
     - Easy setup and extend for REST over SOAP service.
     - Statelessness of RESTful service is helpful in scalability.
-    - Reachability of clients because of HTTP as we have more devices supporting HTTP    - 
+    - Reachability of clients because of HTTP as we have more devices supporting HTTP    
+
+** Difference between Soap and Rest **
+ - https://medium.com/@olaoyeoluwapelumi/soap-apis-vs-rest-apis-82932da552b9
 
 
 ## Reference
