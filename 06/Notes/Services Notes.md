@@ -10,24 +10,7 @@
 ## Cons
 * Horrible for scaling the application
 * Impossible to develop backend and frontend separately
-
-# What we have been doing so far
-* A monolithic architecture
-    * Meaning the frontend (anything visual to the user and the backend (the actual logic that does the function) are tightly coupled)
-        * Tightly coupled just means if you update one thing, it breaks another thing since they are highly dependent on one another
-        * So in our context, if we update something in BL, DL, and Model (the backend), there is a good chance it will break something in our UI (the frontend)
-## Pros
-* Prototyping an application and getting something working right away
-* Simple applications or working on your own 
-
-## Cons
-* Horrible for scaling the application
-* Impossible to develop backend and frontend separately
-
 ## SOA - Service Oriented Architecture
-- A style of software design where services are provided to the other components by application components, through a communication protocol over a network
-- By this We are decoupling backend and frontend and a communication protocol (can be HTTP, HTTPS, SMTP, etc.) to communicate between the two entities via the internet
-- Definition - Architectural Approach in which applications make use of services available in the network. Two components of services are
 - A style of software design where services are provided to the other components by application components, through a communication protocol over a network
 - By this We are decoupling backend and frontend and a communication protocol (can be HTTP, HTTPS, SMTP, etc.) to communicate between the two entities via the internet
 - Definition - Architectural Approach in which applications make use of services available in the network. Two components of services are
@@ -150,7 +133,9 @@
     - Easy setup and extend for REST over SOAP service.
     - Statelessness of RESTful service is helpful in scalability.
     - Reachability of clients because of HTTP as we have more devices supporting HTTP.
-
+- **Why  still some industries are sticked to SOAP Service**
+    - Because they offers exposing API via different protocols
+    - Eg: Banks only want the Services and data exposed via their private network.
 
 # HTTP in brief
 - Hyper Text Transfer Protocol (Secured)
