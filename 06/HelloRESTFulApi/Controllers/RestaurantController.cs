@@ -8,10 +8,20 @@ namespace HelloRESTFulApi.Controllers
     [ApiController]
     public class RestaurantController : ControllerBase
     {
-        [HttpGet()]
+        [HttpGet]
         public ActionResult<List<Restaurant>> Get()
         {
             return DummyData.GetRestaurants();
+        }
+        [HttpPost]
+        public ActionResult<Restaurant> Post(Restaurant r)
+        {
+            return DummyData.AddRestaurant(r);
+        }
+        [HttpDelete]
+        public ActionResult<string> Delete(int id)
+        {
+            return DummyData.RemoveRestaurant(id);
         }
     }
 }
