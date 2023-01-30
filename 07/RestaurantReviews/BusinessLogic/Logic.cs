@@ -5,24 +5,20 @@ namespace BusinessLogic
 {
     public class Logic : ILogic
     {
-        IRepo<EF.Entities.Restaurant> repo;
-        public Logic()
+        IRepo<EF.Entities.Restaurant> _repo;
+        public Logic(IRepo<EF.Entities.Restaurant> repo)
         {
-            repo = new EF.EFRepo();
+            _repo = repo;
         }
         public IEnumerable<Restaurant> GetRestaurants()
         {
-          return Mapper.Map(repo.GetAllRestaurants());
+          return Mapper.Map(_repo.GetAllRestaurants());
         }
 
         public IEnumerable<Restaurant> GetRestaurantsByZipcode(string zipcode)
         {
-            throw new NotImplementedException();
-            //var query = from r in repo.GetAllRestaurants()
-            //            where r.ZipCode == zipcode.Trim()
-            //            select r;
-            //return query.ToList();
-            ////return repo.GetAllRestaurants().Where(r=>r.ZipCode == zipcode);
+            var search = _repo.GetAllRestaurants().Where(r=>r.Zipcode==zipcode);
+            return Mapper.Map(search);
         }
     }
 }

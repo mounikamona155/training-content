@@ -6,7 +6,7 @@ namespace DataFluentApi.Entities;
 
 public partial class RestaurantDbContext : DbContext
 {
-    string path = File.ReadAllText("../../../../UI-Conxole/connectionString.txt");
+    //string path = File.ReadAllText("../../../../UI-Conxole/connectionString.txt");
     public RestaurantDbContext()
     {
     }
@@ -22,9 +22,9 @@ public partial class RestaurantDbContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 
-        => optionsBuilder.UseSqlServer(path);
+    //    => optionsBuilder.UseSqlServer(path);
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
