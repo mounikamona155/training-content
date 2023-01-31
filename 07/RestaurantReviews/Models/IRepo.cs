@@ -14,12 +14,14 @@ namespace Models
         /// </summary>
         /// <param name="restaurant"></param>
         /// <returns>Returns the Restaurant which was added</returns>
-        T Add(T restaurant);
+        T AddRestaurant(T restaurant);
         /// <summary>
         /// Will return all restaurants in the Restaurant.json file
         /// </summary>
         /// <returns>List of all restaurants objects in the collection of Type List<Restaurant></returns>
         List<T> GetAllRestaurants();
+        T RemoveRestaurant(string name);
+        T UpdateRestaurant(T restaurant);
       
     }
 }

@@ -8,7 +8,7 @@ namespace Test
     public class TestValidation
     {
         string time = "07:00:00";
-        static TimeSpan t1 = DateTime.Now.TimeOfDay;
+        static TimeSpan t1 = new TimeSpan(7,0,0);
         static TimeSpan t2 = DateTime.Now.TimeOfDay;
         [SetUp]
         public void Setup()
@@ -24,12 +24,14 @@ namespace Test
             Assert.AreEqual(expected, Validation.HandleTimeSpanNulls(actual));
         }
 
-        [Test]   
-        public void Test_StringToTime()
+        [Test]
+        [TestCase("07:00:00")]
+        [TestCase("7:0:0")]
+        public void Test_StringToTime(string actualTime)
         {
-            var actual = Validation.StringToTime(time);
-            var expectedTime = new TimeSpan(7, 0, 0);
-            Assert.AreEqual(actual,expectedTime);
+            var actual = Validation.StringToTime(actualTime);
+            Assert.AreEqual(actual,t1);
+            Assert.AreNotEqual(actual,t2);
         }
     }
 }

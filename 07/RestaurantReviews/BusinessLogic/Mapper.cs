@@ -7,7 +7,7 @@ namespace BusinessLogic
     public class Mapper
     {
         /// <summary>
-        /// This method converts Models' Restaurant object to Entity Framework Restaurant Entity
+        /// This method converts Data's Restaurant object to Models' Restaurant Entity
         /// </summary>
         /// <param name="r"></param>
         /// <returns>Models.Restaurant</returns>
@@ -27,6 +27,26 @@ namespace BusinessLogic
             };
         }
         /// <summary>
+        /// This method converts Models' Restaurant object to Entity Framework Restaurant Entity in DataLayer
+        /// </summary>
+        /// <param name="r"></param>
+        /// <returns>Data.Restaurant</returns>
+        public static Data.Restaurant Map(Models.Restaurant r)
+        {
+            return new Data.Restaurant()
+            {
+                Id = r.Id,
+                Name = r.Name,
+                CloseTime = Validation.StringToTime(r.CloseTime.ToString()),
+                Cuisine = r.Cuisine,
+                OpenTime = Validation.StringToTime(r.OpenTime.ToString()),
+                Email = r.Email,
+                Phone = r.Phone,
+                Website = r.Website,
+                Zipcode = r.ZipCode
+            };
+        }
+        /// <summary>
         /// This method converts Models' collection of Restaurant object to Entity Framework collection of Restaurant Entity
         /// </summary>
         /// <param name="restaurants"></param>
@@ -34,6 +54,7 @@ namespace BusinessLogic
         public static IEnumerable<Models.Restaurant> Map(IEnumerable<Data.Restaurant> restaurants){
               return restaurants.Select(Map);
         }
+
 
 
     }

@@ -10,10 +10,10 @@ namespace Models
         }
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Cuisine { get; set; }
-        public TimeSpan OpenTime { get; set; }
-        public TimeSpan CloseTime { get; set; }
-        public string Phone { get; set; }
+        public string? Cuisine { get; set; }
+        public TimeSpan? OpenTime { get; set; }
+        public TimeSpan? CloseTime { get; set; }
+        public string? Phone { get; set; }
         /*public string Phone
         {
             get
@@ -31,8 +31,8 @@ namespace Models
                     throw new InvalidDataException("Please add a valid mobile phone with 10 digits only");
             }
         }*/
-        public string Email { get; set; }
-        public string Website { get; set; }
+        public string? Email { get; set; }
+        public string? Website { get; set; }
         public string ZipCode { get; set; }
         public override string ToString()
         {

@@ -20,5 +20,13 @@ namespace BusinessLogic
         /// <param name="zipcode"></param>
         /// <returns>IEnumerable<Restaurants></Restaurants></returns>
         IEnumerable<Restaurant> GetRestaurantsByZipcode(string zipcode);
+        /// <summary>
+        /// Add restaurant to the database
+        /// </summary>
+        /// <param name="r"></param>
+        /// <returns>Restaurant Added</returns>
+        Restaurant AddRestaurant(Restaurant r);
+        Restaurant RemoveRestaurantByName(string r);
+        Restaurant UpdateRestaurant(string name, Restaurant r);
     }
 }
