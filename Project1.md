@@ -23,6 +23,8 @@ Agenda is to create an application to add professional trainers data in a databa
 - Exception handling
 - input validation
 - Logging (to a file not to a console)
+    - Your app should store meaningful logging information (Such as exceptions, user’s action, what table is being accessed to, etc.).
+    - You can use any logging framework, but I recommend using Serilog or NLog.
 - Data should be persisted into database (no hard coded values)
 - DB Structure should be in 3NF
 - Code should have xml documentation via comments
@@ -55,8 +57,9 @@ Agenda is to create an application to add professional trainers data in a databa
 * DB should be on the cloud
     * try to have DB/network access async
 #### Test
-* Have a testing project using NUnit
-* at least 10 test methods
+* have a testing project using NUnit
+* your app should have at least 10 meaningful unit test that checks if validation is working as 
+intended in your application.
 * use TDD for some of the application
 * focus on unit testing business logic
 * data access tests (if present) should not impact the app's actual database
@@ -91,4 +94,13 @@ Agenda is to create an application to add professional trainers data in a databa
 - Entity Framework core
 - Asp.Net Core
 - Moq for Mocking 
-- 
+
+
+# Tips
+- Start as soon as you get this project even if you don’t know how to do everything. You only have two weeks to create it and you need to utilize as much as you can pour in to have a working application.
+- Don’t cheat! Copying other people’s repository in Github is grounds for immediately mutual release.
+- Try to prioritize which functionality makes sense in a working project. If you can't store data in the database or have not created the API the whole purpose of the project is ruined.
+- If you have any unclear understanding of the requirements listed above, ask your batchmates first. If they also don’t know, then you can ask me. First thing I’ll ask for you if you asked other people first. 
+- Get comfortable talking with them since they will be your future group mates on 
+working one enterprise project
+- Push all working code to git on the evening before the presentation day and try not add last minute changes to the project as that might break your working code.
