@@ -7,8 +7,8 @@ using Models;
 namespace Service.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
-    public class RestaurantsController : ControllerBase
+    [ApiController] 
+    public class RestaurantsController : ControllerBase // controllerbase class has all methods and properties to handle HTTP Requests/responses
     {
         ILogic _logic;
         public RestaurantsController(ILogic logic)
@@ -57,14 +57,14 @@ namespace Service.Controllers
             }
 
         }
-        [HttpPost]
-
+        
+        [HttpPost("Add")] // Trying to create a resource on the server
         public ActionResult Add(Restaurant r)
         {
             try
             {
                 var addedRestaurant = _logic.AddRestaurant(r);
-                return Ok(addedRestaurant);
+                return CreatedAtAction("Add",addedRestaurant); //201
             }
             catch (SqlException ex)
             {
@@ -81,9 +81,16 @@ namespace Service.Controllers
             try
             {
                 if (!string.IsNullOrEmpty(name))
-                    return Ok(_logic.RemoveRestaurantByName(name));
+                {
+                    var rest = _logic.RemoveRestaurantByName(name);
+                    if (rest != null)
+                        return Ok(rest);
+                    else
+                        return NotFound();
+                }
                 else
-                    return NotFound();
+                    return BadRequest("Please add a valid restaurant name to be deleted");
+                
             }
             catch (SqlException ex)
             {

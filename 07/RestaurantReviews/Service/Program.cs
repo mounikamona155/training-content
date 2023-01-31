@@ -4,8 +4,10 @@ using DataFluentApi.Entities;
 using Microsoft.EntityFrameworkCore;
 using Models;
 
+// HOST - Server for the Asp.Net Api
 var builder = WebApplication.CreateBuilder(args);
 
+//SERVICES - injected by Dependency Injection
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -26,8 +28,9 @@ builder.Services.AddScoped<IRepo<DataFluentApi.Entities.Restaurant>, EFRepo>();
 //We are creating the instance of Logic by Dependency Inverison
 builder.Services.AddScoped<ILogic,Logic>();
 
-var app = builder.Build();
 
+var app = builder.Build();
+//MIDDLEWARES - a special piece of program which once added become a part of request response pipeline
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

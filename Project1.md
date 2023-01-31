@@ -36,7 +36,7 @@ Agenda is to create an application to add professional trainers data in a databa
 
 ### Design
 - Project layout given will be only a suggestion, the general idea is a separation of concerns which is a requirement
-- Use ADO.Net for middleware to connect application to database; either connected or disconnected approach
+- Use EFCore for middleware to connect application to database; either code first or data first approach.
 - Use an Azure SQL Db in 3 NF; include a database diagram and script to generate Db and tables
 - don't use too many public fields
 - define and use atleast 1 interface
@@ -89,7 +89,7 @@ intended in your application.
 ## Technology stack 
 - C#/.Net
 - Sql Server Db/Azure Sql Databases
-- NLog
+- Serilog/NLog
 - NUnit
 - Entity Framework core
 - Asp.Net Core

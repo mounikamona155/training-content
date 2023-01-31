@@ -12,7 +12,7 @@ namespace DataFluentApi
         }
         public Entities.Restaurant AddRestaurant(Entities.Restaurant restaurant)
         {
-            _context.Add(restaurant);// no need to add any sql INSERT query just call Add method and it will create INSERT query behind the scenes
+            _context.Restaurants.Add(restaurant);// no need to add any sql INSERT query just call Add method and it will create INSERT query behind the scenes
             _context.SaveChanges(); // this method will fire the query to DB and persist the changes
             return restaurant;
         }
@@ -24,10 +24,10 @@ namespace DataFluentApi
 
         public Entities.Restaurant RemoveRestaurant(string name)
         {
-            var search =_context.Restaurants.Where(restaurant => restaurant.Name == name).FirstOrDefault();
+            var search = _context.Restaurants.Where(restaurant => restaurant.Name == name).FirstOrDefault();
             if(search != null)
             {
-                _context.Restaurants.Remove(search);
+                _context.Restaurants.Remove(search);// this will generate DELETE query of Sql to be passed to Database
                 _context.SaveChanges();
             }
             return search;
@@ -35,7 +35,7 @@ namespace DataFluentApi
 
         public Entities.Restaurant UpdateRestaurant(Entities.Restaurant restaurant)
         {
-                _context.Restaurants.Update(restaurant);
+                _context.Restaurants.Update(restaurant);// this will generate UPDATE sql query to be passed to databse via ADO.Net
                 _context.SaveChanges();
             return restaurant;
         }

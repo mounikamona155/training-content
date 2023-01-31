@@ -30,7 +30,10 @@ namespace BusinessLogic
         public Restaurant RemoveRestaurantByName(string r)
         {
             var deletedRestaurant = _repo.RemoveRestaurant(r);
-            return Mapper.Map(deletedRestaurant);
+            if(deletedRestaurant !=null)
+                return Mapper.Map(deletedRestaurant);
+            else
+                return null;
         }
 
         public Restaurant UpdateRestaurant(string name, Restaurant r)
@@ -41,14 +44,17 @@ namespace BusinessLogic
                               select rst).FirstOrDefault();
             if(restaurant != null)
             {
-                restaurant.Name = r.Name;
-                restaurant.Zipcode = r.ZipCode;
-                restaurant.Cuisine= r.Cuisine;
-                restaurant.CloseTime = r.CloseTime;
-                restaurant.OpenTime = r.OpenTime;
-                restaurant.Email = r.Email;
-                restaurant.Website = r.Website;
-                restaurant.Phone = r.Phone;
+                //restaurant.Name = r.Name;
+                //restaurant.Zipcode = r.ZipCode;
+                //restaurant.Cuisine= r.Cuisine;
+                //restaurant.CloseTime = r.CloseTime;
+                //restaurant.OpenTime = r.OpenTime;
+                //restaurant.Email = r.Email;
+                //restaurant.Website = r.Website;
+                //restaurant.Phone = r.Phone;
+
+                restaurant = Mapper.Map(r);
+
                 restaurant = _repo.UpdateRestaurant(restaurant);
             }
             
