@@ -49,11 +49,32 @@ Agenda is to create an application to add professional trainers data in a databa
 
 #### data access
 * class library
-* contains ADO.Net code
+* contains Entity Framework code (you can use any approache : code first or db first)
 * contains data access logic but no business logic
 * use repository pattern for separation of concerns
 * DB should be on the cloud
     * try to have DB/network access async
+#### Test
+* Have a testing project using NUnit
+* at least 10 test methods
+* use TDD for some of the application
+* focus on unit testing business logic
+* data access tests (if present) should not impact the app's actual database
+
+#### REST API
+- Create endpoints(URLs) for each request type
+- Data exposed in the form of xml or json
+- Proper status code and status messages
+- Exception handling
+- CORS enabled
+- Swagger working
+- (optional) Deployed on Azure App Service 
+- Connection strings should not be on git
+
+#### UI
+- Consume the REST API using Fetch API/ XMLHttprequest using JavaScript
+- Have a web Front end using HTML
+- Beautify the web front end with CSS or Bootstrap (preferably)
 
 #### ASP.NET Core REST service
 * follow standard HTTP uniform interface, except hypermedia
@@ -63,10 +84,11 @@ Agenda is to create an application to add professional trainers data in a databa
 * implement hypermedia, or, implement an API Description Language, e.g. using Swashbuckle / Swagger
 
 ## Technology stack 
-- .Net
+- C#/.Net
 - Sql Server Db/Azure Sql Databases
-- C#
 - NLog
-- XUnit
-- ADO.Net
+- NUnit
+- Entity Framework core
 - Asp.Net Core
+- Moq for Mocking 
+- 
