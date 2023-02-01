@@ -8,7 +8,7 @@
 1. Have the following:
    - Data Layer
    - The necessary packages installed in DL project
-   - Appsettings.json in both your startup project and root folder of the solution
+   - Configure connection string. For our project with many layers, it is recommended to keep connection string in the User Secrets of Asp.Net core web API project.
 2. Implement a DbContext
    - Override the OnConfiguring method to point to the connection string stored in your appsettings.json. Not required if you are configuring the Connection String in API project. 
    - Override the OnModelCreating method to manually map some relationships EF Core complains about
