@@ -1,4 +1,5 @@
 ﻿using Data = DataFluentApi.Entities;
+using codefirst = Data_CodeFirst;
 namespace BusinessLogic
 {
     /// <summary>
@@ -6,6 +7,26 @@ namespace BusinessLogic
     /// </summary>
     public class Mapper
     {
+        /// <summary>
+        /// This method converts Data's Restaurant object to Models' Restaurant Entity
+        /// </summary>
+        /// <param name="r"></param>
+        /// <returns>Models.Restaurant</returns>
+        public static Models.Restaurant Map(codefirst.Restaurant r)
+        {
+            return new Models.Restaurant()
+            {
+                Id = r.Id,
+                Name = r.Name,
+                CloseTime = Validation.HandleTimeSpanNulls(r.CloseTime),
+                Cuisine = r.Cuisine,
+                OpenTime = Validation.HandleTimeSpanNulls(r.OpenTime),
+                Email = r.Email,
+                Phone = r.Phone,
+                Website = r.Website,
+                ZipCode = r.Zipcode
+            };
+        }
         /// <summary>
         /// This method converts Data's Restaurant object to Models' Restaurant Entity
         /// </summary>
@@ -31,9 +52,29 @@ namespace BusinessLogic
         /// </summary>
         /// <param name="r"></param>
         /// <returns>Data.Restaurant</returns>
-        public static Data.Restaurant Map(Models.Restaurant r)
+        //public static Data.Restaurant Map(Models.Restaurant r)
+        //{
+        //    return new Data.Restaurant()
+        //    {
+        //        Id = r.Id,
+        //        Name = r.Name,
+        //        CloseTime = Validation.StringToTime(r.CloseTime.ToString()),
+        //        Cuisine = r.Cuisine,
+        //        OpenTime = Validation.StringToTime(r.OpenTime.ToString()),
+        //        Email = r.Email,
+        //        Phone = r.Phone,
+        //        Website = r.Website,
+        //        Zipcode = r.ZipCode
+        //    };
+        //}
+        /// <summary>
+        /// This method converts Models' Restaurant object to Entity Framework Restaurant Entity in DataLayer
+        /// </summary>
+        /// <param name="r"></param>
+        /// <returns>Data.Restaurant</returns>
+        public static codefirst.Restaurant Map(Models.Restaurant r)
         {
-            return new Data.Restaurant()
+            return new codefirst.Restaurant()
             {
                 Id = r.Id,
                 Name = r.Name,
@@ -54,7 +95,15 @@ namespace BusinessLogic
         public static IEnumerable<Models.Restaurant> Map(IEnumerable<Data.Restaurant> restaurants){
               return restaurants.Select(Map);
         }
-
+        /// <summary>
+        /// This method converts Models' collection of Restaurant object to Entity Framework collection of Restaurant Entity
+        /// </summary>
+        /// <param name="restaurants"></param>
+        /// <returns>IEnumerable<Models.Restaurant></returns>
+        public static IEnumerable<Models.Restaurant> Map(IEnumerable<codefirst.Restaurant> restaurants)
+        {
+            return restaurants.Select(Map);
+        }
 
 
     }

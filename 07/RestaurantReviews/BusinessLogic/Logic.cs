@@ -1,12 +1,13 @@
 ﻿using Models;
-using EF = DataFluentApi;
+//using EF = DataFluentApi;
+using codefirst=Data_CodeFirst;
 
 namespace BusinessLogic
 {
     public class Logic : ILogic
     {
-        IRepo<EF.Entities.Restaurant> _repo;
-        public Logic(IRepo<EF.Entities.Restaurant> repo)
+        IRepo<codefirst.Restaurant> _repo;
+        public Logic(IRepo<codefirst.Restaurant> repo)
         {
             _repo = repo;
         }
