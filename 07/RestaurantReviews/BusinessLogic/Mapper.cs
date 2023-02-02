@@ -73,6 +73,11 @@ namespace BusinessLogic
                 ZipCode = r.Zipcode
             };
         }
+        //task
+        public static IEnumerable<Models.Review> Map(IEnumerable<Data.Review> reviews)
+        {
+            throw new NotImplementedException();
+        }
         /// <summary>
         /// This method converts Models' Restaurant object to Entity Framework Restaurant Entity in DataLayer
         /// </summary>

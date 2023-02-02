@@ -26,5 +26,8 @@ namespace Service.Controllers
                         restaurantSearchedById, newReview 
                         ));
         }
+
+        //task 
+        //implement the getReviews 
     }
 }
