@@ -1,13 +1,13 @@
 ﻿using Models;
-//using EF = DataFluentApi;
-using codefirst=Data_CodeFirst;
+using datafirst = DataFluentApi.Entities;
+//using codefirst=Data_CodeFirst;
 
 namespace BusinessLogic
 {
     public class Logic : ILogic
     {
-        IRepo<codefirst.Restaurant> _repo;
-        public Logic(IRepo<codefirst.Restaurant> repo)
+        IRepo<datafirst.Restaurant> _repo;
+        public Logic(IRepo<datafirst.Restaurant> repo)
         {
             _repo = repo;
         }
@@ -45,15 +45,6 @@ namespace BusinessLogic
                               select rst).FirstOrDefault();
             if(restaurant != null)
             {
-                //restaurant.Name = r.Name;
-                //restaurant.Zipcode = r.ZipCode;
-                //restaurant.Cuisine= r.Cuisine;
-                //restaurant.CloseTime = r.CloseTime;
-                //restaurant.OpenTime = r.OpenTime;
-                //restaurant.Email = r.Email;
-                //restaurant.Website = r.Website;
-                //restaurant.Phone = r.Phone;
-
                 restaurant = Mapper.Map(r);
 
                 restaurant = _repo.UpdateRestaurant(restaurant);

@@ -1,6 +1,6 @@
-//using DataFluentApi.Entities;
+using DataFluentApi.Entities;
 using BusinessLogic;
-using Data_CodeFirst;
+//using Data_CodeFirst;
 using Microsoft.EntityFrameworkCore;
 using Models;
 
@@ -24,7 +24,7 @@ builder.Services.AddDbContext<RestaurantDbContext>(options=>options.UseSqlServer
 
 //We are creating the instance of EFRepo by Dependency Inverison
 //builder.Services.AddScoped<IRepo<DataFluentApi.Entities.Restaurant>, EFRepo>();
-builder.Services.AddScoped<IRepo<Data_CodeFirst.Restaurant>, EFRepo>();
+builder.Services.AddScoped<IRepo<DataFluentApi.Entities.Restaurant>, DataFluentApi.EFRepo>();
 
 //We are creating the instance of Logic by Dependency Inverison
 builder.Services.AddScoped<ILogic,Logic>();

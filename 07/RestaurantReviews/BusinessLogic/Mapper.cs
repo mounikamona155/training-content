@@ -52,27 +52,27 @@ namespace BusinessLogic
         /// </summary>
         /// <param name="r"></param>
         /// <returns>Data.Restaurant</returns>
-        //public static Data.Restaurant Map(Models.Restaurant r)
-        //{
-        //    return new Data.Restaurant()
-        //    {
-        //        Id = r.Id,
-        //        Name = r.Name,
-        //        CloseTime = Validation.StringToTime(r.CloseTime.ToString()),
-        //        Cuisine = r.Cuisine,
-        //        OpenTime = Validation.StringToTime(r.OpenTime.ToString()),
-        //        Email = r.Email,
-        //        Phone = r.Phone,
-        //        Website = r.Website,
-        //        Zipcode = r.ZipCode
-        //    };
-        //}
+        public static Data.Restaurant Map(Models.Restaurant r)
+        {
+            return new Data.Restaurant()
+            {
+                Id = r.Id,
+                Name = r.Name,
+                CloseTime = Validation.StringToTime(r.CloseTime.ToString()),
+                Cuisine = r.Cuisine,
+                OpenTime = Validation.StringToTime(r.OpenTime.ToString()),
+                Email = r.Email,
+                Phone = r.Phone,
+                Website = r.Website,
+                Zipcode = r.ZipCode
+            };
+        }
         /// <summary>
         /// This method converts Models' Restaurant object to Entity Framework Restaurant Entity in DataLayer
         /// </summary>
         /// <param name="r"></param>
         /// <returns>Data.Restaurant</returns>
-        public static codefirst.Restaurant Map(Models.Restaurant r)
+        public static codefirst.Restaurant Map(Models.Restaurant r, string s)
         {
             return new codefirst.Restaurant()
             {
