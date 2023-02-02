@@ -32,6 +32,6 @@ namespace Models
         /// <param name="restaurant"></param>
         /// <returns>updated restaurant</returns>
         T UpdateRestaurant(T restaurant);
-      
+
     }
 }

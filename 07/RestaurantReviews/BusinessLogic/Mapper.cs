@@ -7,6 +7,32 @@ namespace BusinessLogic
     /// </summary>
     public class Mapper
     {
+
+        public static Models.Review Map(Data.Review review)
+        {
+            return new Models.Review() {
+                Id = review.Id,
+                AmbienceRating = review.AmbienceRating,
+                Comment = review.Comment,
+                OverallRating = review.OverallRating,
+                RestaurantId = review.RestaurantId ,
+                ServiceRating = review.ServiceRating,
+                TasteRating = review.TasteRating
+            };
+        }
+        public static Data.Review Map(Models.Review review)
+        {
+            return new Data.Review()
+            {
+                Id = review.Id,
+                AmbienceRating = review.AmbienceRating,
+                Comment = review.Comment,
+                OverallRating = review.OverallRating,
+                RestaurantId = review.RestaurantId,
+                ServiceRating = review.ServiceRating,
+                TasteRating = review.TasteRating
+            };
+        }
         /// <summary>
         /// This method converts Data's Restaurant object to Models' Restaurant Entity
         /// </summary>

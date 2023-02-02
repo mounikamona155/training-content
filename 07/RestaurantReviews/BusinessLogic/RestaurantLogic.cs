@@ -4,10 +4,10 @@ using datafirst = DataFluentApi.Entities;
 
 namespace BusinessLogic
 {
-    public class Logic : ILogic
+    public class RestaurantLogic : IRestaurantLogic
     {
         IRepo<datafirst.Restaurant> _repo;
-        public Logic(IRepo<datafirst.Restaurant> repo)
+        public RestaurantLogic(IRepo<datafirst.Restaurant> repo)
         {
             _repo = repo;
         }
@@ -20,6 +20,12 @@ namespace BusinessLogic
         public IEnumerable<Restaurant> GetRestaurants()
         {
           return Mapper.Map(_repo.GetAllRestaurants());
+        }
+
+        public Restaurant GetRestaurantsById(int id)
+        {
+            var search = _repo.GetAllRestaurants().Where(r => r.Id == id).FirstOrDefault();
+            return Mapper.Map(search);
         }
 
         public IEnumerable<Restaurant> GetRestaurantsByZipcode(string zipcode)
@@ -45,7 +51,15 @@ namespace BusinessLogic
                               select rst).FirstOrDefault();
             if(restaurant != null)
             {
-                restaurant = Mapper.Map(r);
+                restaurant.Name = r.Name;
+                restaurant.Cuisine = r.Cuisine;
+                restaurant.Email = r.Email;
+                restaurant.Zipcode = r.ZipCode;
+                restaurant.OpenTime = r.OpenTime;
+                restaurant.CloseTime = r.CloseTime;
+                restaurant.Phone = r.Phone;
+                restaurant.Website = r.Website;
+                //restaurant = Mapper.Map(r);
 
                 restaurant = _repo.UpdateRestaurant(restaurant);
             }

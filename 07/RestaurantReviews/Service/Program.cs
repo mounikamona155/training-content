@@ -3,6 +3,7 @@ using BusinessLogic;
 //using Data_CodeFirst;
 using Microsoft.EntityFrameworkCore;
 using Models;
+using DataFluentApi;
 
 // HOST - Server for the Asp.Net Api
 var builder = WebApplication.CreateBuilder(args);
@@ -25,9 +26,12 @@ builder.Services.AddDbContext<RestaurantDbContext>(options=>options.UseSqlServer
 //We are creating the instance of EFRepo by Dependency Inverison
 //builder.Services.AddScoped<IRepo<DataFluentApi.Entities.Restaurant>, EFRepo>();
 builder.Services.AddScoped<IRepo<DataFluentApi.Entities.Restaurant>, DataFluentApi.EFRepo>();
+builder.Services.AddScoped<IReviewRepo, ReviewRepo>();
 
 //We are creating the instance of Logic by Dependency Inverison
-builder.Services.AddScoped<ILogic,Logic>();
+builder.Services.AddScoped<IRestaurantLogic,RestaurantLogic>();
+
+builder.Services.AddScoped<IReviewLogic, ReviewLogic>();
 
 
 var app = builder.Build();

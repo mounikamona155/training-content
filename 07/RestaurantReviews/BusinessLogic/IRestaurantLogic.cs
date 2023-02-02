@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
-    public interface ILogic
+    public interface IRestaurantLogic
     {
         /// <summary>
         /// This method will return all the restaurants been queried from the Data Logic
@@ -20,6 +20,7 @@ namespace BusinessLogic
         /// <param name="zipcode"></param>
         /// <returns>IEnumerable<Restaurants></Restaurants></returns>
         IEnumerable<Restaurant> GetRestaurantsByZipcode(string zipcode);
+        Restaurant GetRestaurantsById(int id);
         /// <summary>
         /// Add restaurant to the database
         /// </summary>
