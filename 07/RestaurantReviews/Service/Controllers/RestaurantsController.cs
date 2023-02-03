@@ -18,6 +18,12 @@ namespace Service.Controllers
             _logic = logic;
             _cache = cache;
         }
+        // By default Aps.Net core supports text/plain as well as application/json
+        [HttpGet]
+        public string GetString()
+        {
+            return "Hello world";
+        }
         [HttpGet("all")]
         public ActionResult Get()
         {

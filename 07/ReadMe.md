@@ -115,8 +115,8 @@
 - Or use Formatter custom or default
     - Add XML format support
         - `builder.Services.AddControllers().AddXmlSerializerFormatters();`
-## [CORS]()
-- Cross Origin Request Sharing - is an HTTP-header based mechanism that allows a server to indicate any origins (domain, scheme, or port) other than its own from which a browser should permit loading resources.
+## [CORS](https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-7.0)
+- **C**ross **O**rigin **R**equest **S**haring - is an HTTP-header based mechanism that allows a server to indicate any origins (domain, scheme, or port) other than its own from which a browser should permit loading resources.
 - Browser security prevents a web page from making requests to a different domain than the one that served the web page. 
 - This restriction is called the same-origin policy. 
 - These two URLs have the same origin:
