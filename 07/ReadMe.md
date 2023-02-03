@@ -102,3 +102,28 @@
 * Useful if your function does a complex sql operation to get that data that takes time and to store that information to call on instead
 * Might cause problems if database gets updated and using the cache information will be outdated
 
+# Cloud Services
+## What is a cloud?
+- Its just another computer which is hidden from the consumer which is accessed via internet
+## Why cloud services are required these days?
+- On -premise (Physical infra - land, loaction, machines, ACs, Wires, Sys Admin team etc...)
+- High investment cost in terms of onpprem setup
+- High maintainence cost as well
+- Heavy staff responsibilities
+- cloud vs on-premise pros and cons read [here](https://www.morefield.com/blog/on-premises-vs-cloud/)
+## Different types of [cloud models](https://www.chapter247.com/blog/what-is-cloud-computing-types-of-cloud-computing/)
+- public 
+- private
+- Hybrid 
+- multi-cloud 
+
+## [Different types of cloud services](https://www.ibm.com/in-en/topics/iaas-paas-saas)
+- IAAS - Infrastructure As A Service
+- PAAS - Platform As A Service
+- SAAS - Software As A Service
+- DAAS - Data As A Service
+- XAAS - Anything As A Service
+
+## Deploying Asp.Net core web api to Azure
+- [Article](https://aspnetcore.readthedocs.io/en/stable/tutorials/publish-to-azure-webapp-using-vs.html)
+    - Not all steps are exactly how I showed but you can get a brief glimpse of it reading this article.
