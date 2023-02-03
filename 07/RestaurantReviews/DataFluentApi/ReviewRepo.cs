@@ -33,6 +33,16 @@ namespace DataFluentApi
 
         public List<Review> GetReviews(Entities.Restaurant restaurant)
         {
+            var overallrate = _context.Reviews;
+            var query = from o in overallrate
+                        where o.RestaurantId == restaurant.Id
+                        select o;
+            foreach (var val in query)
+            {
+                val.OverallRating = (val.TasteRating + val.ServiceRating + val.AmbienceRating) / 3;
+            }
+            _context.SaveChanges();
+
             return _context.Reviews.Where(x=>x.RestaurantId == restaurant.Id).ToList();
         }
     }
