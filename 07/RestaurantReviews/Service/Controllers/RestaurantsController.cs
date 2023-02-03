@@ -1,4 +1,5 @@
 ﻿using BusinessLogic;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
@@ -20,11 +21,13 @@ namespace Service.Controllers
         }
         // By default Aps.Net core supports text/plain as well as application/json
         [HttpGet]
+        //[EnableCors("policy1")]
         public string GetString()
         {
             return "Hello world";
         }
         [HttpGet("all")]
+       // [EnableCors("policy2")]
         public ActionResult Get()
         {
             try
