@@ -96,11 +96,14 @@
     * It can check what http request the client needs to give to make it work and so on
 * Really useful debugging tool for our api
 
-## [ASP.NET Caching]()
+## [ASP.NET Caching](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/overview?view=aspnetcore-7.0)
 * Storing information in your app and just recalling that information rather than doing another operation on your database
 * Useful if you expect to use that information multiple times to do a single operation
 * Useful if your function does a complex sql operation to get that data that takes time and to store that information to call on instead
 * Might cause problems if database gets updated and using the cache information will be outdated
+- In Asp.Net Core Web Api you can cache using:
+    - In memory caches aka sticky sessions
+    - Distributed Caches using Sql Server - Redis Caches, NCache.
 
 ## [Content Negotiation](https://learn.microsoft.com/en-us/aspnet/core/web-api/advanced/formatting?view=aspnetcore-7.0)
 - Whenever client request for a format of data using Accept header, this is called content Negotiation.
@@ -112,7 +115,7 @@
 - Or use Formatter custom or default
     - Add XML format support
         - `builder.Services.AddControllers().AddXmlSerializerFormatters();`
-## [CORS]
+## [CORS]()
 - Cross Origin Request Sharing - is an HTTP-header based mechanism that allows a server to indicate any origins (domain, scheme, or port) other than its own from which a browser should permit loading resources.
 - Browser security prevents a web page from making requests to a different domain than the one that served the web page. 
 - This restriction is called the same-origin policy. 

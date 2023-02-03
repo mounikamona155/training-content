@@ -8,9 +8,10 @@ using DataFluentApi;
 // HOST - Server for the Asp.Net Api
 var builder = WebApplication.CreateBuilder(args);
 
+//Service to add cache
+builder.Services.AddMemoryCache();
 //SERVICES - injected by Dependency Injection
 // Add services to the container.
-
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
