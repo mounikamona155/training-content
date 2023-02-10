@@ -1,6 +1,3 @@
-<p align="center">
-    <img src="_examples-html5-essentials/assets/images/html5.png" alt="HTML5 (HyperText Markup Language) Essentials logo" title="HTML5 (HyperText Markup Language) Essentials" width="200" />
-</p>
 
 HTML5 Essentials
 =====================
@@ -263,10 +260,6 @@ There are many features related to DTD, Tags, Elements, attributes, APIs introdu
 Basic Page Structure
 =====================
 
-### 3.1. Explore
-Let's have a look and observe an HTML source code in the browser:
-1. Open any existing .html file in the browser, in our case open `structure.html`
-2. Check the page source or Inspect page with Debugger utilities like: `FireBug, Inspect/ Inspect Element` (in browser -> Right Click on page -> choose Inspect Element -> Check/observe actual HTML code/tags).
 
 #### Doctype DTD (Document Type Declaration OR Document Type Definition)
 - First line of an HTML document - `!DOCTYPE html`
