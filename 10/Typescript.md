@@ -83,17 +83,8 @@ Understanding TypeScript
     - [The `keyof` constraint](#the-keyof-constraint)
     - [Generic Classes](#generic-classes)
     - [Generic utility types](#generic-utility-types)
-  - [Decorators](#decorators)
-    - [A first class decorator](#a-first-class-decorator)
-    - [Working with decorator factories](#working-with-decorator-factories)
-      - [Building more useful decorators](#building-more-useful-decorators)
-    - [Diving into property decorators](#diving-into-property-decorators)
-    - [Accessor \& Parameter decorators](#accessor--parameter-decorators)
   - [Summary](#summary)
-  - [Resources](#resources)
-  - [Contribution](#contribution)
-    - [I appreciate any and all contributions to my notes!](#i-appreciate-any-and-all-contributions-to-my-notes)
-- [Thank you for your help and support. :heart:](#thank-you-for-your-help-and-support-heart)
+  
 
 ___
 
