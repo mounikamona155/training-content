@@ -14,9 +14,8 @@ function displayNotesInForm(note)
     titleInput.value=note.title;
     descriptionInput.value=note.description;
     deletButton.classList.remove('hidden');
-    editButton.classList.remove('hidden');
     deletButton.setAttribute('data-id',note.id);
-    editButton.setAttribute('data-id',note.id);
+    saveButton.setAttribute('data-id',note.id);
 }
 function getNoteById(id)
 {
@@ -54,14 +53,14 @@ function addNote(title,description){
         displayNotes();
     });
 }
-function updateNote(title,description){
+function updateNote(id,title,description){
 
     const body={
         title:title,
         description:description,
         isVisible:true
     };
-    fetch('https://localhost:7132/api/Notes',
+    fetch(`https://localhost:7132/api/Notes/${id}`,
     {
         method:'PUT',
         body:JSON.stringify(body),
@@ -73,7 +72,7 @@ function updateNote(title,description){
     .then(data=>data.json())
     .then(response => {
         clearForm();
-        displayNotes();
+        getAllNotes();
     });
 }
 
@@ -111,7 +110,15 @@ function getAllNotes(){
 getAllNotes();
 saveButton.addEventListener('click',function()
 {
+    const id=saveButton.dataset.id;
+    if(id)
+    {
+        updateNote(id,titleInput.value,descriptionInput.value);
+    }
+    else
+    {
     addNote(titleInput.value,descriptionInput.value);
+    }
 });
 
 function deleteNode(id)
@@ -134,8 +141,4 @@ deletButton.addEventListener('click',function()
 {
     const id=deletButton.dataset.id;
     deleteNode(id);
-})
-editButton.addEventListener('click',function()
-{
-    updateNote(id,titleInput.value,descriptionInput.value);
 })
