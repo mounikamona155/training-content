@@ -142,3 +142,7 @@ This can be solved by bundling several files together into one file to be downlo
 Webpack is a powerful static module bundler for JavaScript applications that packages all modules in our application into a bundle and serves it to the browser.
 
 Webpack builds a dependency graph  when it processes the application. It starts from a list of modules defined in its config file and recursively builds a dependency graph that includes every module our application needs, then packages all of those modules into a small bundle that can be loaded by the browser.
+
+References::
+
+https://hackmd.io/@benjipeto/typescript-cheatsheet#Object-Types
