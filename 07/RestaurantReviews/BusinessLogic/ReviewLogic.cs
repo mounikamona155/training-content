@@ -22,6 +22,7 @@ namespace BusinessLogic
 
         public IEnumerable<Review> GetReviews(Restaurant restaurant)
         {
+
             return Mapper.Map(_repo.GetReviews(Mapper.Map(restaurant)));
         }
     }

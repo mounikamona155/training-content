@@ -35,6 +35,16 @@ namespace DataFluentApi
         // task 3 - create the get Reviews Action in a way that it also shows average rating in the JSON without making any change to DB
         public List<Review> GetReviews(Entities.Restaurant restaurant)
         {
+            var overallrate = _context.Reviews;
+            var query = from o in overallrate
+                        where o.RestaurantId == restaurant.Id
+                        select o;
+            foreach (var val in query)
+            {
+                val.OverallRating = (val.TasteRating + val.ServiceRating + val.AmbienceRating) / 3;
+            }
+            _context.SaveChanges();
+
             return _context.Reviews.Where(x=>x.RestaurantId == restaurant.Id).ToList();
         }
     }
