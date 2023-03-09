@@ -71,6 +71,60 @@ expect(spy).toHaveBeenCalledTimes(number);
 expect(spy).toHaveBeenCalledWith(...arguments);
 ```
 
+**Setup and Teardown**
+
+Sometimes in order to test a feature we need to perform some setup, perhaps it’s creating some test objects. Also we may need to perform some 
+cleanup activities after we have finished testing, perhaps we need to delete some files from the hard drive.
+
+These activities are called setup and teardown (for cleaning up) and Jasmine has a few functions we can use to make this easier:
+
+- beforeAll
+  This function is called once, before all the specs in a test suite (describe function) are run.
+
+- afterAll
+  This function is called once after all the specs in a test suite are finished.
+
+- beforeEach
+  This function is called before each test specification (it function) is run.
+
+- afterEach
+  This function is called after each test specification is run.
+
+We might use these functions like so:
+
+```TypeScript
+describe('Hello world', () => {
+
+  let expected = "";
+
+  beforeEach(() => {
+    expected = "Hello World";
+  });
+
+  afterEach(() => {
+    expected = "";
+  });
+
+  it('says hello', () => {
+    expect(helloWorld())
+        .toEqual(expected);
+  });
+});
+
+```
+**Karma**
+
+Manually running Jasmine tests by refreshing a browser tab repeatedly in different browsers every time we edit some code can become tiresome.
+
+Karma is a tool which lets us spawn browsers and run Jasmine tests inside of them all from the command line. The results of the tests are also displayed on the command line.
+
+Karma can also watch your development files for changes and re-run the tests automatically.
+
+Karma lets us run Jasmine tests as part of a development tool chain which requires tests to be runnable and results inspectable via the command line.
+
+It’s not necessary to know the internals of how Karma works. When using the Angular CLI it handles the configuration for us and for the rest of this section we are going to run the tests using only Jasmine.
+
+
 **Reference**
 
 https://jasmine.github.io/tutorials/your_first_suite
