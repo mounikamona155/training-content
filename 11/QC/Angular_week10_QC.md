@@ -8,7 +8,7 @@
  - What version of Angular are you comfortable working with?
    - Angular 2 was a major overhaul of the technology, and angular 4+ continues right up to version 13 which is current. We have been using the newest version of Angular, 13.
  - What is the latest released version of Angular?
-   - Angular v15 
+   - Angular v13 was released November 2021.
  - What is the Angular CLI?
    - The command line interface that helps us create, configure, and initialize our Angular apps, modules, and components.
  - How can you create a new Angular project on the command line using the Angular CLI?
@@ -53,6 +53,11 @@
    - Angular's FormsModule, which we import in order to use ngModel.
  - What makes a “single page application” (SPA) different from a normal web page?
    - A single page applicaiton is front-loaded, as in all of the components and data are loaded at once, and we don't need to invoke any more loads to get to different parts of our application. A traditional web site has different pages, and as we navigate around we request each page one at a time. In SPA instead of viewing different pages, we simply hide and show different components as needed.
+ - What is an Angular service?
+   - An angular service is a class that is instantiated as a singleton object and exposes functionality to the components and modules to which is it provided. 
+   - Good use cases for services in angular include: API consumption, inter-component/module communication, addressing cross cutting concerns
+ - How can you create a new service on the command line using the Angular CLI?
+   - ng generate service <service-name> AKA ng g s <service-name>
  - What are the properties of the metadata object passed to the @Component decorator?
    - template - used to write the template (html) code inline
    - templateUrl - used to point to a file containing the template code (html)
@@ -67,7 +72,24 @@
    - CLI command: `ng generate component <directive-name>` registers components in the @NgModule decorated object, in the declarations array
  - How are directives registered to an Angular module?
    - CLI command: `ng generate directive <directive-name>` which registers these in the declarations array of the @NgModule decorated object.
-  - What are some features of the Angular framework?
+ - How are services registered to an Angular module?
+   - CLI command: `ng generate service <service-name>` which generates the files, which contain the @Injetable decorated object which tells angular where to expose the service
+ - What is a Angular pipe?
+   - The angular pipe is a special function that can format or change the representation of data. Syntax: {{ dateVariable | date }} //changes the format of the date text
+   - not to be confused with the Observable class .pipe() method which may be conceptually similar.
+ - How are pipes registered to an Angular module?
+   - with the CLI command: `ng generate pipe <pipe-name>`
+ - What is the purpose of the HttpClientModule?
+   - This is a module that allows us to make HTTP requests. We primarily use these requests to consume our backend API.
+ - What is an observable? Describe some of their use cases in Angular applications
+   - An object that provides support for passing messages between parts of your application. An observer defines methods to publish values which will be consumed by observers.
+   - An observer is an object that subscribes to an observable and defines callback methods to handle the data published to the observable.
+ - How can a component be notified of new values provided to an observable?
+   - By using an observer which is an object that subscribes to the observable and defines a next() method which acts whenever new data is published or emitted.
+ - Explain the difference between server-side and client-side rendering
+   - Client-side rendering, like we see in Angular apps, presents a view and makes calls to an API to get data to fill out that view.
+   - Server-side rendering, like MVC pattern, used to be more popular and is where the backend delivers an entire and complete HTML document.
+ - What are some features of the Angular framework?
    - Support for mobile displays as of Angular2+
    - CLI - which gives us commands to generate and modify the Angular project easily
    - Single page application support (including webpacking)
@@ -97,7 +119,26 @@
    - Component directives - components associated with an HTML template
  - What is the benefit of using a directive like NgClass over the class attribute, or even property binding to the class attribute?
    - NgClass directive can be used to apply multiple class-selectors to a DOM element. It can also apply selectors based on expressions for more robust logic.
- 
+ - What is a pipe? A service?
+   - a pipe is an angular feature that translates or formats data into another representation. Pipes can be chained where input to one is output from the previous.
+   - a service is an angular class, instantiated as a singleton and shared between modules and components
+ - How would you create a custom pipe? What about a service?
+   - CLI Command: `ng generate pipe <pipe-name>`, then complete the implementation in the .pipe.ts file
+   - CLI Command: `ng generate service <service-name>`, then complete the implementation in the .service.ts file
+ - How does dependency injection work in Angular?
+   - The dependency is marked with an @Injectable decorator that marks it as a dependency to be injected. The decorator includes the `providedIn` attribute which indicates modules the injectable should be exposed to. The dependency can be injected into components that require it (based on type) provided they are children of the modules to which the dependency is provided.
+ - What is an Angular module? What properties should you set inside it?
+   - An angular module is a cohesive block of code that is dedicated to a particular domain, workflow, or feature. They can export functionality making it available to other modules, and can import exposed functionality from other modules.
+   - The meta-data properties of a module include:  imports, providers, declarations, exports, bootstrap
+ - What’s the difference between a JavaScript module and Angular module? What are some common Angular modules?
+   - A JavaScript module is an individual file with JavaScript code, usually containing a class or a library of functions
+   - An NgModule is a class marked by the @NgModule decorator with a metadata object that describes how that particular part of the application fits together with the other parts. NgModules are specific to Angular.
+ - How would you lazy load a module?
+   - By default angular modules are eagerly loaded. To lazily load Angular modules, use `loadChildren:`, instead of `component:`, in the routes array of your AppRoutingModule
+ - How have you used the HttpClient? What methods does it have and what do they return?
+   - HttpClient is used to make HTTP requests. HttpClient includes methods for GET, POST, PUT, and other HTTP methods. These return Observable objects.
+ - What is an Observable? What’s the difference between it and a Promise?
+   - Similar to a promise, an observable can be a placeholder until the data is resolved. Unlike promises, observables can emit multiple items. Promises can only resolve to a single item.
  - What forms of data binding does Angular support? Explain the syntax for each
    - String interpolation - one-way data binding where data in the component is referenced by the template and often visible in the view. Syntax: {{ identifierName }}
    - Property binding - one-way data binding where data in the component is referenced by the template. Syntax: [identifierName]
@@ -105,3 +146,14 @@
      - Two-way data binding can be achieved by combining property and event binding with banana-in-a-box syntax:  [(NgModel)]="value"
  - What does Webpack do for your ng project?
    - Packages angular modules into payloads that can be loaded at once, rather than loading scripts and assets separately. This front-loads the load times and reduces overhead.
+ - How would you implement routing in your project?
+   - When creating a new project, accept routing as a feature when prompted. Then we include the path and components to be routed to in the routes attribute of the router meta-data.
+   - To add into an existing project: include the RouterModule in the module dependencies metadata, add the routes array to the module, and include the <router-outlet> element in a template. Also can use the CLI command: `ng generate module app-routing`
+ - What is an EventEmitter and when would you use one?
+   - this "emits" custom events using the @Output decorator, we emit events to send data to the parent component, or to an observable that allows other components to observe that data.
+ - What’s the difference between using reactive and template-driven forms? How would you setup each?
+   - Template-driven forms make use of the `FormsModule`, while reactive forms are based on `ReactiveFormsModule`.
+   - Template-driven forms are asynchronous in nature, whereas Reactive forms are mostly synchronous.
+   - Template-driven form logic is mostly controlled by the template, while reactive form logic is in the template file.
+ - How would you run your unit tests for an Angular project?
+   - CLI command: `ng test`
