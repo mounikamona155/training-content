@@ -1,0 +1,16 @@
+﻿@*Razor expressions*@
+<p>@(DateTime.Now - DateTime.Now.AddYears(10))</p>
+@* Razor block*@
+@{
+    ViewData["Title"] = "Home Page";
+    int a = 12;
+    if (a % 2 == 0)
+    {
+        <h3>C# logic can be added to my page</h3>
+    }
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <h2>Hello World</h2>
+</div>

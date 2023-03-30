@@ -1,0 +1,13 @@
+﻿@*Strongly Typed view*@
+@*@model IEnumerable<Restaurant>*@
+
+@*Dynamic or weakly typed view*@
+
+@foreach (var r in ViewBag.Restaurant)
+{
+    <h2>@r.Name</h2>
+    <p>@r.Zipcode</p>
+    <br/>
+}
+
+
