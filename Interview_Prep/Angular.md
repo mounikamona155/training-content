@@ -1,35 +1,67 @@
 What do you mean by NGIF and Ng show ? 
+
 What is a observable?
+
 What is dependency injection? How do you achieve it in Angular?
+
 Brief us on Angular
+
 What are component life cycle hooks in Angular?
+
 What is a service in Angular?
+
 What is Angular and could it work on Mobile?
+
 What is a directive in Angular?
+
 Are you familiar with stepping ahead and compiling in Angular?
+
 What is angular framework?
+
 How to create new project in Angular?
+
 How to inject services in Angular Component?
+
 What bindings do you know in Angular?
+
 How to create a component in Angular?
+
 What are angular forms?
+
 how to call two-way databinding?
+
 What is databinding?
+
 Brief us on components
+
 Brief us on directives
+
 Which Angular version did you use?
+
 When do we use angular services?
+
 What are the commonly used directives in Angular?
+
 Brief us on ngIf and ngFor
+
 What is the purpose of the main.ts file?
+
 What are some of the common directives in angular?
+
 What does Angular model.ts do?
+
 What are the main Angular component folders?
+
 What are some angular dependencies?
+
 What are the 7 folders created when starting an Angular project?
+
 Brief us on Angular modules
+
 how can we generate component. >how many will create after generating component. >
+
 What is routing ?
+
 What is a User Interface?
 Tell me how you would add a new component to an Angular project?
 How do you deploy an angular project?
